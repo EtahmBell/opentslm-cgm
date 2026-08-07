@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2025 Stanford University, ETH Zurich, and the project authors (see CONTRIBUTORS.md)
+# SPDX-FileCopyrightText: 2025 This source file is part of the OpenTSLM open-source project.
+#
+# SPDX-License-Identifier: MIT
+
+.venv
+.vscode
+__pycache__
+.DS_STORE
+
+raw_data
+
+**/data/*
+!**/data/.gitkeep
+
+*.ts
+*.zip
+upload_to_huggingface.py
+
+dist/
+
+*.license
+
+# Research data — NEVER COMMIT
+data/
+*.csv
+*_DEX.json
+*.jsonl
+
+# Model checkpoints / weights
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Python environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE / OS
+.vscode/
+.DS_Store
+Thumbs.db
