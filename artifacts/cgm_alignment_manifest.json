@@ -1,0 +1,187 @@
+{
+  "seed": 42,
+  "window_size": 128,
+  "stride": 128,
+  "threshold_mg_dl": 160,
+  "normalization": {
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711,
+    "computed_from": "training participants only"
+  },
+  "train": [
+    {
+      "participant_id": "AIREADI-1044",
+      "filename": "1044_DEX.json",
+      "n_readings": 2463
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "filename": "1050_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "filename": "1021_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "filename": "1037_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "filename": "1043_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "filename": "1010_DEX.json",
+      "n_readings": 2832
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "filename": "1046_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "filename": "1040_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "filename": "1012_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "filename": "1023_DEX.json",
+      "n_readings": 2816
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "filename": "1008_DEX.json",
+      "n_readings": 2849
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "filename": "1015_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "filename": "1031_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "filename": "1018_DEX.json",
+      "n_readings": 2841
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "filename": "1025_DEX.json",
+      "n_readings": 2849
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "filename": "1048_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "filename": "1024_DEX.json",
+      "n_readings": 2848
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "filename": "1006_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "filename": "1011_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "filename": "1004_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "filename": "1016_DEX.json",
+      "n_readings": 2855
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "filename": "1001_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "filename": "1030_DEX.json",
+      "n_readings": 2855
+    }
+  ],
+  "validation": [
+    {
+      "participant_id": "AIREADI-1026",
+      "filename": "1026_DEX.json",
+      "n_readings": 2574
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "filename": "1034_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "filename": "1028_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "filename": "1019_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "filename": "1049_DEX.json",
+      "n_readings": 2855
+    }
+  ],
+  "test": [
+    {
+      "participant_id": "AIREADI-1036",
+      "filename": "1036_DEX.json",
+      "n_readings": 2854
+    },
+    {
+      "participant_id": "AIREADI-1051",
+      "filename": "1051_DEX.json",
+      "n_readings": 2814
+    },
+    {
+      "participant_id": "AIREADI-1013",
+      "filename": "1013_DEX.json",
+      "n_readings": 2849
+    },
+    {
+      "participant_id": "AIREADI-1033",
+      "filename": "1033_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1029",
+      "filename": "1029_DEX.json",
+      "n_readings": 2856
+    },
+    {
+      "participant_id": "AIREADI-1017",
+      "filename": "1017_DEX.json",
+      "n_readings": 2856
+    }
+  ]
+}
