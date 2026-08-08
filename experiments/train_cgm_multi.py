@@ -137,11 +137,8 @@ train_std = (
 def manifest_files(split_name):
 
     return [
-        DATA_DIR
-        / item["filename"]
-
-        for item
-        in manifest[split_name]
+        DATA_DIR / item["relative_path"]
+        for item in manifest[split_name]
     ]
 
 
@@ -311,6 +308,60 @@ val_examples = (
 print(
     "Validation examples:",
     len(val_examples),
+)
+
+# ============================================================
+# Create a balanced validation subset
+# ============================================================
+
+val_positive = [
+    x for x in val_examples
+    if x["_answer_clean"] == "(a)"
+]
+
+val_negative = [
+    x for x in val_examples
+    if x["_answer_clean"] == "(b)"
+]
+
+val_rng = random.Random(SEED)
+
+val_rng.shuffle(val_positive)
+val_rng.shuffle(val_negative)
+
+n_val_per_class = min(
+    len(val_positive),
+    len(val_negative),
+)
+
+val_eval_examples = (
+    val_positive[:n_val_per_class]
+    + val_negative[:n_val_per_class]
+)
+
+val_rng.shuffle(
+    val_eval_examples
+)
+
+print(
+    "Balanced validation examples:",
+    len(val_eval_examples),
+)
+
+print(
+    "Validation YES:",
+    sum(
+        x["_answer_clean"] == "(a)"
+        for x in val_eval_examples
+    ),
+)
+
+print(
+    "Validation NO:",
+    sum(
+        x["_answer_clean"] == "(b)"
+        for x in val_eval_examples
+    ),
 )
 
 
@@ -524,9 +575,8 @@ model.llm.eval()
 # Use only first 30 validation examples for the initial
 # baseline sanity check.
 baseline_metrics = evaluate(
-    val_examples,
+    val_eval_examples,
     "ORIGINAL OPENTSLM — VALIDATION",
-    max_examples=30,
 )
 
 
@@ -682,7 +732,7 @@ model.llm.eval()
 
 
 aligned_metrics = evaluate(
-    val_examples,
+    val_eval_examples,
     "CGM-ALIGNED OPENTSLM — VALIDATION",
 )
 

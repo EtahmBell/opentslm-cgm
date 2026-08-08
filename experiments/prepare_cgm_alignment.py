@@ -76,6 +76,49 @@ files = discover_cgm_files(
     DATA_DIR
 )
 
+# ============================================================
+# Remove duplicate participant files
+# ============================================================
+
+unique_by_participant = {}
+
+for path in files:
+
+    participant_id, _ = load_cgm_file(path)
+
+    if participant_id in unique_by_participant:
+
+        print(
+            "Duplicate participant found:",
+            participant_id,
+        )
+
+        print(
+            "  keeping:",
+            unique_by_participant[participant_id],
+        )
+
+        print(
+            "  ignoring:",
+            path,
+        )
+
+        continue
+
+    unique_by_participant[
+        participant_id
+    ] = path
+
+
+files = list(
+    unique_by_participant.values()
+)
+
+print(
+    "Unique CGM participants:",
+    len(files),
+)
+
 print(
     "CGM participant files found:",
     len(files),
@@ -190,9 +233,7 @@ def describe_files(paths):
     for path in paths:
 
         participant_id, glucose = (
-            load_cgm_file(
-                path
-            )
+            load_cgm_file(path)
         )
 
         output.append(
@@ -200,8 +241,9 @@ def describe_files(paths):
                 "participant_id":
                     participant_id,
 
-                "filename":
-                    path.name,
+                # Save path relative to the private data folder.
+                "relative_path":
+                    str(path.relative_to(DATA_DIR)),
 
                 "n_readings":
                     len(glucose),
