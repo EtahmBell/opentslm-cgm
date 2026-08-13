@@ -1,0 +1,3635 @@
+{
+  "experiment": "stage5_tiny_overfit_above180",
+  "seed": 42,
+  "task": "above_180",
+  "n_yes": 10,
+  "n_no": 10,
+  "epochs": 30,
+  "learning_rates": {
+    "encoder": 0.0002,
+    "projector": 0.0001,
+    "lora": 0.0001
+  },
+  "normalization": {
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711
+  },
+  "test_participants_sealed": 6,
+  "answer_tokens": {
+    "a": 2948,
+    "b": 1921,
+    "common_prefix": [
+      128000
+    ]
+  },
+  "selected_examples": [
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 512,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2688,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1152,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2560,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 896,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 640,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1792,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1792,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 128,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 768,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1536,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2432,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 512,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2432,
+      "gold": "(b)"
+    }
+  ],
+  "frozen_lora": {
+    "condition": "CONDITION A \u2014 STAGE-5 LoRA FROZEN",
+    "train_lora": false,
+    "trainable_parameters": {
+      "encoder": 2110976,
+      "projector": 264448,
+      "lora": 0,
+      "base_llm": 0
+    },
+    "history": [
+      {
+        "epoch": 0,
+        "mean_loss": null,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5005676478147507,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 1,
+        "mean_loss": 14.991461944580077,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.4997941754758358,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8438951373100281,
+              "p_b": 0.1561049073934555,
+              "p_correct": 0.8438951373100281,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.8459424376487732,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.8459424376487732,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.8459424376487732,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.8459424376487732,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.8459424376487732,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8438951373100281,
+              "p_b": 0.1561049073934555,
+              "p_correct": 0.8438951373100281,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.847967803478241,
+              "p_b": 0.15203224122524261,
+              "p_correct": 0.847967803478241,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8438951373100281,
+              "p_b": 0.1561049073934555,
+              "p_correct": 0.8438951373100281,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8438951373100281,
+              "p_b": 0.1561049073934555,
+              "p_correct": 0.8438951373100281,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8438951373100281,
+              "p_b": 0.1561049073934555,
+              "p_correct": 0.1561049073934555,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8459424376487732,
+              "p_b": 0.1540575623512268,
+              "p_correct": 0.1540575623512268,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 5,
+        "mean_loss": 14.35582456588745,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.4994408130645752,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 10,
+        "mean_loss": 12.960937023162842,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.4994491972029209,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.8670357465744019,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.8670357465744019,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.8670357465744019,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 15,
+        "mean_loss": 12.938661575317383,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5003157574683428,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9263036847114563,
+              "p_b": 0.07369626313447952,
+              "p_correct": 0.9263036847114563,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.929440438747406,
+              "p_b": 0.07055959850549698,
+              "p_correct": 0.929440438747406,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9273632764816284,
+              "p_b": 0.07263670861721039,
+              "p_correct": 0.9273632764816284,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9273632764816284,
+              "p_b": 0.07263670861721039,
+              "p_correct": 0.9273632764816284,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.9284088015556335,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9263036847114563,
+              "p_b": 0.07369626313447952,
+              "p_correct": 0.07369626313447952,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.929440438747406,
+              "p_b": 0.07055959850549698,
+              "p_correct": 0.07055959850549698,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.07159119844436646,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9263036847114563,
+              "p_b": 0.07369626313447952,
+              "p_correct": 0.07369626313447952,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.07159119844436646,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9263036847114563,
+              "p_b": 0.07369626313447952,
+              "p_correct": 0.07369626313447952,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9273632764816284,
+              "p_b": 0.07263670861721039,
+              "p_correct": 0.07263670861721039,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9273632764816284,
+              "p_b": 0.07263670861721039,
+              "p_correct": 0.07263670861721039,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9284088015556335,
+              "p_b": 0.07159119844436646,
+              "p_correct": 0.07159119844436646,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9263036847114563,
+              "p_b": 0.07369626313447952,
+              "p_correct": 0.07369626313447952,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 20,
+        "mean_loss": 8.423850059509277,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.49980508387088773,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8519527316093445,
+              "p_b": 0.14804719388484955,
+              "p_correct": 0.8519527316093445,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 25,
+        "mean_loss": 6.833897614479065,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5003685988485813,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.8670357465744019,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.8670357465744019,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8670357465744019,
+              "p_b": 0.13296423852443695,
+              "p_correct": 0.13296423852443695,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.13660839200019836,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 30,
+        "mean_loss": 2.336446673143655,
+        "evaluation": {
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_probability_correct": 0.4953428477048874,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      }
+    ],
+    "final": {
+      "yes_accuracy": 0.0,
+      "no_accuracy": 1.0,
+      "balanced_accuracy": 0.5,
+      "predicted_yes": 0,
+      "predicted_no": 20,
+      "mean_probability_correct": 0.4953428477048874,
+      "predictions": [
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4378235340118408,
+          "p_b": 0.562176525592804,
+          "p_correct": 0.4378235340118408,
+          "participant_id": "AIREADI-1048",
+          "window_start": 512
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1012",
+          "window_start": 2688
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1040",
+          "window_start": 1024
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4378235340118408,
+          "p_b": 0.562176525592804,
+          "p_correct": 0.4378235340118408,
+          "participant_id": "AIREADI-1018",
+          "window_start": 1152
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1025",
+          "window_start": 2560
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1040",
+          "window_start": 896
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1018",
+          "window_start": 640
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1031",
+          "window_start": 2432
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1025",
+          "window_start": 1792
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1018",
+          "window_start": 1792
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1024",
+          "window_start": 128
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1037",
+          "window_start": 768
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1015",
+          "window_start": 0
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1016",
+          "window_start": 1536
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1010",
+          "window_start": 640
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1008",
+          "window_start": 128
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1008",
+          "window_start": 1280
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1012",
+          "window_start": 2432
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1008",
+          "window_start": 512
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1021",
+          "window_start": 2432
+        }
+      ]
+    }
+  },
+  "trainable_lora": {
+    "condition": "CONDITION B \u2014 STAGE-5 LoRA TRAINABLE",
+    "train_lora": true,
+    "trainable_parameters": {
+      "encoder": 2110976,
+      "projector": 264448,
+      "lora": 11272192,
+      "base_llm": 0
+    },
+    "history": [
+      {
+        "epoch": 0,
+        "mean_loss": null,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5005676478147507,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.863391637802124,
+              "p_b": 0.13660839200019836,
+              "p_correct": 0.863391637802124,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.8558511734008789,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.859663724899292,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.859663724899292,
+              "p_b": 0.14033624529838562,
+              "p_correct": 0.14033624529838562,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.8558511734008789,
+              "p_b": 0.14414885640144348,
+              "p_correct": 0.14414885640144348,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 1,
+        "mean_loss": 4.656131359285792,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5000000263680704,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.9995121955871582,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9995121955871582,
+              "p_b": 0.0004878571489825845,
+              "p_correct": 0.0004878571489825845,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 5,
+        "mean_loss": 1.213855081796646,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.49946618769317863,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.957912266254425,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.957912266254425,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.957912266254425,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.9525741338729858,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.04208773002028465,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.04208773002028465,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.04742587357759476,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.04208773002028465,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.04742587357759476,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.04208773002028465,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.04742587357759476,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.04742587357759476,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.9525741338729858,
+              "p_b": 0.04742587357759476,
+              "p_correct": 0.04742587357759476,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.957912266254425,
+              "p_b": 0.04208773002028465,
+              "p_correct": 0.04208773002028465,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 10,
+        "mean_loss": 0.8430390149354935,
+        "evaluation": {
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_probability_correct": 0.5000000298023224,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4378235340118408,
+              "p_b": 0.562176525592804,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 15,
+        "mean_loss": 0.8018198758363724,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5000000298023224,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.562176525592804,
+              "p_b": 0.4378235340118408,
+              "p_correct": 0.562176525592804,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.562176525592804,
+              "p_b": 0.4378235340118408,
+              "p_correct": 0.4378235340118408,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.531209409236908,
+              "p_b": 0.4687906503677368,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 20,
+        "mean_loss": 0.7385111719369888,
+        "evaluation": {
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_probability_correct": 0.5000000298023224,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 25,
+        "mean_loss": 1.0465411886572837,
+        "evaluation": {
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_probability_correct": 0.5000000417232513,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.622459352016449,
+              "p_b": 0.3775406777858734,
+              "p_correct": 0.622459352016449,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.6513549089431763,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.622459352016449,
+              "p_b": 0.3775406777858734,
+              "p_correct": 0.3775406777858734,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(a)",
+              "p_a": 0.6513549089431763,
+              "p_b": 0.3486451804637909,
+              "p_correct": 0.3486451804637909,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      },
+      {
+        "epoch": 30,
+        "mean_loss": 0.8313949212431908,
+        "evaluation": {
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "balanced_accuracy": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_probability_correct": 0.5031209468841553,
+          "predictions": [
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1048",
+              "window_start": 512
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2688
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1040",
+              "window_start": 1024
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1152
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1025",
+              "window_start": 2560
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1040",
+              "window_start": 896
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.4687906503677368,
+              "participant_id": "AIREADI-1018",
+              "window_start": 640
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1031",
+              "window_start": 2432
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1025",
+              "window_start": 1792
+            },
+            {
+              "gold": "(a)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1018",
+              "window_start": 1792
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1024",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1037",
+              "window_start": 768
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1015",
+              "window_start": 0
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1016",
+              "window_start": 1536
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1010",
+              "window_start": 640
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 128
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1008",
+              "window_start": 1280
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.5,
+              "p_b": 0.5,
+              "p_correct": 0.5,
+              "participant_id": "AIREADI-1012",
+              "window_start": 2432
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1008",
+              "window_start": 512
+            },
+            {
+              "gold": "(b)",
+              "prediction": "(b)",
+              "p_a": 0.4687906503677368,
+              "p_b": 0.531209409236908,
+              "p_correct": 0.531209409236908,
+              "participant_id": "AIREADI-1021",
+              "window_start": 2432
+            }
+          ]
+        }
+      }
+    ],
+    "final": {
+      "yes_accuracy": 0.0,
+      "no_accuracy": 1.0,
+      "balanced_accuracy": 0.5,
+      "predicted_yes": 0,
+      "predicted_no": 20,
+      "mean_probability_correct": 0.5031209468841553,
+      "predictions": [
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1048",
+          "window_start": 512
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1012",
+          "window_start": 2688
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1040",
+          "window_start": 1024
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1018",
+          "window_start": 1152
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1025",
+          "window_start": 2560
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1040",
+          "window_start": 896
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.4687906503677368,
+          "participant_id": "AIREADI-1018",
+          "window_start": 640
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1031",
+          "window_start": 2432
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1025",
+          "window_start": 1792
+        },
+        {
+          "gold": "(a)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1018",
+          "window_start": 1792
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1024",
+          "window_start": 128
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1037",
+          "window_start": 768
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1015",
+          "window_start": 0
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1016",
+          "window_start": 1536
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1010",
+          "window_start": 640
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1008",
+          "window_start": 128
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1008",
+          "window_start": 1280
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.5,
+          "p_b": 0.5,
+          "p_correct": 0.5,
+          "participant_id": "AIREADI-1012",
+          "window_start": 2432
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1008",
+          "window_start": 512
+        },
+        {
+          "gold": "(b)",
+          "prediction": "(b)",
+          "p_a": 0.4687906503677368,
+          "p_b": 0.531209409236908,
+          "p_correct": 0.531209409236908,
+          "participant_id": "AIREADI-1021",
+          "window_start": 2432
+        }
+      ]
+    }
+  }
+}

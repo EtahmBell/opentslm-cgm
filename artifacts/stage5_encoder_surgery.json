@@ -1,0 +1,633 @@
+{
+  "experiment": "stage5_encoder_surgery",
+  "seed": 42,
+  "task": "above_180",
+  "n_yes": 10,
+  "n_no": 10,
+  "normalization": {
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711
+  },
+  "test_participants_sealed": 6,
+  "manual_forward_max_abs_difference": 0.0,
+  "selected_examples": [
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 512,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2688,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1152,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2560,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 896,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 640,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1792,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1792,
+      "gold": "(a)"
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 128,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 768,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1536,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2432,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 512,
+      "gold": "(b)"
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2432,
+      "gold": "(b)"
+    }
+  ],
+  "results": {
+    "stage5_original": {
+      "condition": "stage5_original",
+      "display_name": "1 \u2014 ORIGINAL STAGE-5",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 1.1925385479116812e-06,
+          "rms_feature_std": 5.7542588365322445e-06,
+          "mean_pairwise_cosine": 1.0000019073486328,
+          "min_pairwise_cosine": 1.0000017881393433,
+          "max_pairwise_cosine": 1.0000020265579224
+        },
+        "projector_variation": {
+          "mean_feature_std": 7.255770242409199e-07,
+          "rms_feature_std": 1.3865477512808866e-06,
+          "mean_pairwise_cosine": 0.9999988277753195,
+          "min_pairwise_cosine": 0.9999986886978149,
+          "max_pairwise_cosine": 0.9999989867210388
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 1.0000003576278687,
+          "l2": 0.0005896699149161577,
+          "l2_per_sqrt_dim": 9.213592420564964e-06,
+          "relative_l2": 3.4555268016351934e-05
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 1.0000004768371582,
+          "l2": 0.0004697822732850909,
+          "l2_per_sqrt_dim": 7.340348020079546e-06,
+          "relative_l2": 2.75297279919827e-05
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9999990463256836,
+          "l2": 0.000570194679312408,
+          "l2_per_sqrt_dim": 2.2273229660640936e-06,
+          "relative_l2": 1.1578434923933726e-05
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.9999992251396179,
+          "l2": 0.0004586292488966137,
+          "l2_per_sqrt_dim": 1.7915205035023973e-06,
+          "relative_l2": 9.312975208687624e-06
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 1.53367886923661e-06,
+          "same_class_cosine": 1.0000001503361595,
+          "opposite_class_cosine": 1.0000001525878905,
+          "yes_no_centroid_cosine": 1.0000001192092896,
+          "same_class_l2_per_sqrt_dim": 8.320280299282483e-06,
+          "opposite_class_l2_per_sqrt_dim": 8.533528240945998e-06,
+          "yes_no_centroid_l2_per_sqrt_dim": 2.968039325423888e-06
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 9.272757779399399e-07,
+          "same_class_cosine": 0.9999989330768585,
+          "opposite_class_cosine": 0.9999989545345307,
+          "yes_no_centroid_cosine": 0.9999989867210388,
+          "same_class_l2_per_sqrt_dim": 2.0448149432657676e-06,
+          "opposite_class_l2_per_sqrt_dim": 2.096078763429432e-06,
+          "yes_no_centroid_l2_per_sqrt_dim": 7.272457764884166e-07
+        }
+      }
+    },
+    "tsqa_t5_only": {
+      "condition": "tsqa_t5_only",
+      "display_name": "2 \u2014 STAGE-5 + TSQA TRANSFORMER 5",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.0001604782446520403,
+          "rms_feature_std": 0.0004451031854841858,
+          "mean_pairwise_cosine": 0.999998410542806,
+          "min_pairwise_cosine": 0.9999982118606567,
+          "max_pairwise_cosine": 0.9999986886978149
+        },
+        "projector_variation": {
+          "mean_feature_std": 6.006824696669355e-05,
+          "rms_feature_std": 0.00010698084952309728,
+          "mean_pairwise_cosine": 0.9999993046124777,
+          "min_pairwise_cosine": 0.9999991059303284,
+          "max_pairwise_cosine": 0.9999995231628418
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.9999977350234985,
+          "l2": 0.03489891067147255,
+          "l2_per_sqrt_dim": 0.0005452954792417586,
+          "relative_l2": 0.002043405746004999
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.9999967813491821,
+          "l2": 0.0418606698513031,
+          "l2_per_sqrt_dim": 0.000654072966426611,
+          "relative_l2": 0.0024510316127343387
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9999997615814209,
+          "l2": 0.03212033957242966,
+          "l2_per_sqrt_dim": 0.00012547007645480335,
+          "relative_l2": 0.0006531379832550613
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.9999990463256836,
+          "l2": 0.04000898450613022,
+          "l2_per_sqrt_dim": 0.00015628509572707117,
+          "relative_l2": 0.000813546425731023
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.00026060963864438236,
+          "same_class_cosine": 0.9999944368998209,
+          "opposite_class_cosine": 0.9999934673309326,
+          "yes_no_centroid_cosine": 0.9999983906745911,
+          "same_class_l2_per_sqrt_dim": 0.0008111367834014042,
+          "opposite_class_l2_per_sqrt_dim": 0.0009064224620669848,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.0004608212038874626
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 0.00010495088645257056,
+          "same_class_cosine": 0.9999991887145572,
+          "opposite_class_cosine": 0.9999991112947464,
+          "yes_no_centroid_cosine": 1.000000238418579,
+          "same_class_l2_per_sqrt_dim": 0.00020316695491702478,
+          "opposite_class_l2_per_sqrt_dim": 0.00023180958443845158,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.00012800369586329907
+        }
+      }
+    },
+    "tsqa_t6_only": {
+      "condition": "tsqa_t6_only",
+      "display_name": "3 \u2014 STAGE-5 + TSQA TRANSFORMER 6",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.0008320986526086926,
+          "rms_feature_std": 0.0014908406883478165,
+          "mean_pairwise_cosine": 0.9999977151552836,
+          "min_pairwise_cosine": 0.9999968409538269,
+          "max_pairwise_cosine": 0.9999982118606567
+        },
+        "projector_variation": {
+          "mean_feature_std": 5.473005512612872e-05,
+          "rms_feature_std": 9.262193634640425e-05,
+          "mean_pairwise_cosine": 0.9999995827674866,
+          "min_pairwise_cosine": 0.9999989867210388,
+          "max_pairwise_cosine": 0.9999999403953552
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.9999969005584717,
+          "l2": 0.15589764714241028,
+          "l2_per_sqrt_dim": 0.0024359007366001606,
+          "relative_l2": 0.0024603702311611297
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.9999980330467224,
+          "l2": 0.12301789224147797,
+          "l2_per_sqrt_dim": 0.0019221545662730932,
+          "relative_l2": 0.001941463296714387
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.999998927116394,
+          "l2": 0.03943614289164543,
+          "l2_per_sqrt_dim": 0.00015404743317048997,
+          "relative_l2": 0.0012450007324787578
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 1.0000003576278687,
+          "l2": 0.03000706620514393,
+          "l2_per_sqrt_dim": 0.00011721510236384347,
+          "relative_l2": 0.0009473243746882066
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.001141931745223701,
+          "same_class_cosine": 0.9999972628222571,
+          "opposite_class_cosine": 0.9999969828128815,
+          "yes_no_centroid_cosine": 0.9999993443489075,
+          "same_class_l2_per_sqrt_dim": 0.0022226130318207045,
+          "opposite_class_l2_per_sqrt_dim": 0.0024231160040653777,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.001078356639482081
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 7.552277384093031e-05,
+          "same_class_cosine": 0.9999994277954102,
+          "opposite_class_cosine": 0.9999994266033173,
+          "yes_no_centroid_cosine": 1.000000238418579,
+          "same_class_l2_per_sqrt_dim": 0.00013941598152895395,
+          "opposite_class_l2_per_sqrt_dim": 0.00014886660535921693,
+          "yes_no_centroid_l2_per_sqrt_dim": 6.057157224859111e-05
+        }
+      }
+    },
+    "tsqa_t5_t6": {
+      "condition": "tsqa_t5_t6",
+      "display_name": "4 \u2014 STAGE-5 + TSQA TRANSFORMERS 5 AND 6",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.06465097516775131,
+          "rms_feature_std": 0.10133296996355057,
+          "mean_pairwise_cosine": 0.9900464415550232,
+          "min_pairwise_cosine": 0.9877272844314575,
+          "max_pairwise_cosine": 0.9943410754203796
+        },
+        "projector_variation": {
+          "mean_feature_std": 0.003253561444580555,
+          "rms_feature_std": 0.005043176468461752,
+          "mean_pairwise_cosine": 0.9974573651949564,
+          "min_pairwise_cosine": 0.9968221187591553,
+          "max_pairwise_cosine": 0.9985626935958862
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.9880709648132324,
+          "l2": 10.021947860717773,
+          "l2_per_sqrt_dim": 0.1565929353237152,
+          "relative_l2": 0.1558766940626306
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.9877272844314575,
+          "l2": 10.190218925476074,
+          "l2_per_sqrt_dim": 0.15922217071056366,
+          "relative_l2": 0.1584939035757366
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9968226552009583,
+          "l2": 2.039421796798706,
+          "l2_per_sqrt_dim": 0.007966491393744946,
+          "relative_l2": 0.07991601953720277
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.9969876408576965,
+          "l2": 1.980556607246399,
+          "l2_per_sqrt_dim": 0.007736549247056246,
+          "relative_l2": 0.07760935024215666
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.2099500596523285,
+          "same_class_cosine": 0.9287673956818051,
+          "opposite_class_cosine": 0.8782857441902161,
+          "yes_no_centroid_cosine": 0.9434629678726196,
+          "same_class_l2_per_sqrt_dim": 0.312223460075135,
+          "opposite_class_l2_per_sqrt_dim": 0.440841260664165,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.3333759307861328
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 0.010088896378874779,
+          "same_class_cosine": 0.9864340311951107,
+          "opposite_class_cosine": 0.9775394123792648,
+          "yes_no_centroid_cosine": 0.9899902939796448,
+          "same_class_l2_per_sqrt_dim": 0.01419236848079082,
+          "opposite_class_l2_per_sqrt_dim": 0.019655599709949456,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.014521286822855473
+        }
+      }
+    },
+    "skip_t5_t6": {
+      "condition": "skip_t5_t6",
+      "display_name": "5 \u2014 STAGE-5 SKIPPING TRANSFORMERS 5 AND 6",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.01783406361937523,
+          "rms_feature_std": 0.02888561598956585,
+          "mean_pairwise_cosine": 0.9009828766187032,
+          "min_pairwise_cosine": 0.8809633851051331,
+          "max_pairwise_cosine": 0.924222469329834
+        },
+        "projector_variation": {
+          "mean_feature_std": 0.008671831339597702,
+          "rms_feature_std": 0.012281440198421478,
+          "mean_pairwise_cosine": 0.9877168337504069,
+          "min_pairwise_cosine": 0.9870494604110718,
+          "max_pairwise_cosine": 0.9880735874176025
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.8809632658958435,
+          "l2": 2.88956618309021,
+          "l2_per_sqrt_dim": 0.04514947161078453,
+          "relative_l2": 0.4737812301193156
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.8977627754211426,
+          "l2": 2.700521230697632,
+          "l2_per_sqrt_dim": 0.0421956442296505,
+          "relative_l2": 0.44278489903801194
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9880731105804443,
+          "l2": 4.124456405639648,
+          "l2_per_sqrt_dim": 0.016111157834529877,
+          "relative_l2": 0.15440012983758514
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.9870498180389404,
+          "l2": 4.676147937774658,
+          "l2_per_sqrt_dim": 0.01826620288193226,
+          "relative_l2": 0.17505285005435545
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.03111599013209343,
+          "same_class_cosine": 0.8637748387124803,
+          "opposite_class_cosine": 0.8287225502729416,
+          "yes_no_centroid_cosine": 0.9426722526550293,
+          "same_class_l2_per_sqrt_dim": 0.05391324370995992,
+          "opposite_class_l2_per_sqrt_dim": 0.06554495232645423,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.03929733857512474
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 0.012884026393294334,
+          "same_class_cosine": 0.9785606602827708,
+          "opposite_class_cosine": 0.9714550334215164,
+          "yes_no_centroid_cosine": 0.990480363368988,
+          "same_class_l2_per_sqrt_dim": 0.020541592677020364,
+          "opposite_class_l2_per_sqrt_dim": 0.024597867944976315,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.01447015255689621
+        }
+      }
+    },
+    "full_tsqa_encoder": {
+      "condition": "full_tsqa_encoder",
+      "display_name": "6 \u2014 FULL TSQA ENCODER + STAGE-5 PROJECTOR",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.2724531888961792,
+          "rms_feature_std": 0.370810866355896,
+          "mean_pairwise_cosine": 0.8414914806683859,
+          "min_pairwise_cosine": 0.7806083559989929,
+          "max_pairwise_cosine": 0.9504338502883911
+        },
+        "projector_variation": {
+          "mean_feature_std": 0.015454214997589588,
+          "rms_feature_std": 0.021463952958583832,
+          "mean_pairwise_cosine": 0.9624151190121969,
+          "min_pairwise_cosine": 0.9472482800483704,
+          "max_pairwise_cosine": 0.9881941676139832
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.9504337310791016,
+          "l2": 18.527830123901367,
+          "l2_per_sqrt_dim": 0.28949734568595886,
+          "relative_l2": 0.3167928206595201
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.7806081771850586,
+          "l2": 39.45002746582031,
+          "l2_per_sqrt_dim": 0.6164066791534424,
+          "relative_l2": 0.6745250465066972
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9881937503814697,
+          "l2": 4.435564041137695,
+          "l2_per_sqrt_dim": 0.017326422035694122,
+          "relative_l2": 0.15641555793059897
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.9472482204437256,
+          "l2": 9.093427658081055,
+          "l2_per_sqrt_dim": 0.03552120178937912,
+          "relative_l2": 0.32067027946133836
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.1710442155599594,
+          "same_class_cosine": 0.9383239090442658,
+          "opposite_class_cosine": 0.9309070074558258,
+          "yes_no_centroid_cosine": 0.985679030418396,
+          "same_class_l2_per_sqrt_dim": 0.2904196970164776,
+          "opposite_class_l2_per_sqrt_dim": 0.3189788130670786,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.15356284379959106
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 0.010445216670632362,
+          "same_class_cosine": 0.9828082455529107,
+          "opposite_class_cosine": 0.981372223496437,
+          "yes_no_centroid_cosine": 0.9968150854110718,
+          "same_class_l2_per_sqrt_dim": 0.017715456184103258,
+          "opposite_class_l2_per_sqrt_dim": 0.019197432245127856,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.008868219330906868
+        }
+      }
+    },
+    "full_tsqa_encoder_projector": {
+      "condition": "full_tsqa_encoder_projector",
+      "display_name": "7 \u2014 FULL TSQA ENCODER + TSQA PROJECTOR",
+      "layers_to_run": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stress_test": {
+        "encoder_variation": {
+          "mean_feature_std": 0.2724531888961792,
+          "rms_feature_std": 0.370810866355896,
+          "mean_pairwise_cosine": 0.8414914806683859,
+          "min_pairwise_cosine": 0.7806083559989929,
+          "max_pairwise_cosine": 0.9504338502883911
+        },
+        "projector_variation": {
+          "mean_feature_std": 0.07451184839010239,
+          "rms_feature_std": 0.11173930019140244,
+          "mean_pairwise_cosine": 0.7022086183230082,
+          "min_pairwise_cosine": 0.5781854391098022,
+          "max_pairwise_cosine": 0.9218321442604065
+        },
+        "encoder_real_vs_zero": {
+          "cosine": 0.9504337310791016,
+          "l2": 18.527830123901367,
+          "l2_per_sqrt_dim": 0.28949734568595886,
+          "relative_l2": 0.3167928206595201
+        },
+        "encoder_real_vs_alternating": {
+          "cosine": 0.7806081771850586,
+          "l2": 39.45002746582031,
+          "l2_per_sqrt_dim": 0.6164066791534424,
+          "relative_l2": 0.6745250465066972
+        },
+        "projector_real_vs_zero": {
+          "cosine": 0.9218323826789856,
+          "l2": 21.972524642944336,
+          "l2_per_sqrt_dim": 0.08583017438650131,
+          "relative_l2": 0.393128636760266
+        },
+        "projector_real_vs_alternating": {
+          "cosine": 0.5781852602958679,
+          "l2": 48.0339241027832,
+          "l2_per_sqrt_dim": 0.1876325160264969,
+          "relative_l2": 0.8594147194112709
+        }
+      },
+      "real_cgm_20": {
+        "encoder": {
+          "dimension": 4096,
+          "mean_feature_std": 0.1710442155599594,
+          "same_class_cosine": 0.9383239090442658,
+          "opposite_class_cosine": 0.9309070074558258,
+          "yes_no_centroid_cosine": 0.985679030418396,
+          "same_class_l2_per_sqrt_dim": 0.2904196970164776,
+          "opposite_class_l2_per_sqrt_dim": 0.3189788130670786,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.15356284379959106
+        },
+        "projector": {
+          "dimension": 65536,
+          "mean_feature_std": 0.047339268028736115,
+          "same_class_cosine": 0.8911334531174766,
+          "opposite_class_cosine": 0.8788901376724243,
+          "yes_no_centroid_cosine": 0.9754759073257446,
+          "same_class_l2_per_sqrt_dim": 0.08556625443614191,
+          "opposite_class_l2_per_sqrt_dim": 0.09383380495011806,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.045138876885175705
+        }
+      }
+    }
+  }
+}

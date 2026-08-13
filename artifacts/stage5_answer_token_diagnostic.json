@@ -1,0 +1,3111 @@
+{
+  "experiment": "stage5_answer_token_diagnostic",
+  "seed": 42,
+  "repo_id": "OpenTSLM/llama-3.2-1b-ecg-sp",
+  "checkpoint": "C:\\tslm\\opentslm-cgm\\checkpoints\\cgm_alignment_stage5_full_adaptation_seed42.pt",
+  "test_participants_sealed": 6,
+  "answer_a": {
+    "raw": "(a)<|end_of_text|>",
+    "token_ids": [
+      128000,
+      2948,
+      8,
+      128001
+    ],
+    "tokens": [
+      "<|begin_of_text|>",
+      "(a",
+      ")",
+      "<|end_of_text|>"
+    ]
+  },
+  "answer_b": {
+    "raw": "(b)<|end_of_text|>",
+    "token_ids": [
+      128000,
+      1921,
+      8,
+      128001
+    ],
+    "tokens": [
+      "<|begin_of_text|>",
+      "(b",
+      ")",
+      "<|end_of_text|>"
+    ]
+  },
+  "common_prefix_len": 1,
+  "class_tokens": {
+    "a_id": 2948,
+    "a_token": "(a",
+    "b_id": 1921,
+    "b_token": "(b"
+  },
+  "n_examples": 120,
+  "overall": {
+    "token_accuracy": 0.5,
+    "full_answer_accuracy": 0.5,
+    "mean_p_a_gold_yes": 0.9213651190201442,
+    "mean_p_b_gold_no": 0.07849633259077866,
+    "gold_no_prefers_b": 0,
+    "gold_no_total": 60
+  },
+  "tasks": {
+    "above_160": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9324532747268677,
+      "mean_p_b_on_gold_no": 0.06754668802022934,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    },
+    "above_180": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9316221296787262,
+      "mean_p_b_on_gold_no": 0.06754668802022934,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    },
+    "sustained_above_180_15m": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9399133324623108,
+      "mean_p_b_on_gold_no": 0.06008664891123772,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    },
+    "rise_50_30m": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9046505093574524,
+      "mean_p_b_on_gold_no": 0.09534946084022522,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    },
+    "fall_50_30m": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9046505093574524,
+      "mean_p_b_on_gold_no": 0.09534946084022522,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    },
+    "tir_70_180_above_90": {
+      "n": 20,
+      "token_accuracy": 0.5,
+      "full_answer_accuracy": 0.5,
+      "mean_p_a_on_gold_yes": 0.9149009585380554,
+      "mean_p_b_on_gold_no": 0.08509904891252518,
+      "gold_yes_prefers_a": 10,
+      "gold_no_prefers_b": 0
+    }
+  },
+  "records": [
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1008",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08481411635875702,
+      "full_answer_logprob_b": -2.7098138332366943,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08480577170848846,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.709805727005005,
+        -1.7881377516459906e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08500902354717255,
+      "full_answer_logprob_b": -2.7100090980529785,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08500079810619354,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.71000075340271,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1037",
+      "window_start": 2304,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08472339063882828,
+      "full_answer_logprob_b": -2.709723472595215,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.390948667307384e-06,
+        -0.08471421152353287,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.390948667307384e-06,
+        -2.70971417427063,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1006",
+      "window_start": 512,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08488047122955322,
+      "full_answer_logprob_b": -2.7098805904388428,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08487224578857422,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709872245788574,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1012",
+      "window_start": 2560,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08480928838253021,
+      "full_answer_logprob_b": -2.7098093032836914,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08480106294155121,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709800958633423,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1018",
+      "window_start": 0,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0849807858467102,
+      "full_answer_logprob_b": -2.7099807262420654,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08497244119644165,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.709972381591797,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1006",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08490665256977081,
+      "full_answer_logprob_b": -2.709906578063965,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08489830791950226,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.7098982334136963,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1025",
+      "window_start": 2432,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08435556292533875,
+      "full_answer_logprob_b": -2.709355592727661,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08434733748435974,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7093472480773926,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08499880135059357,
+      "full_answer_logprob_b": -2.709998846054077,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.271740287251305e-06,
+        -0.08498974144458771,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.271740287251305e-06,
+        -2.7099897861480713,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1018",
+      "window_start": 2560,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08510648459196091,
+      "full_answer_logprob_b": -2.710106372833252,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08509813994169235,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.7100980281829834,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1030",
+      "window_start": 2432,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0849175900220871,
+      "full_answer_logprob_b": -2.7099177837371826,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.0849093645811081,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709909439086914,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1046",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08479209244251251,
+      "full_answer_logprob_b": -2.709792137145996,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08478386700153351,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7097837924957275,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1008",
+      "window_start": 1024,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08489448577165604,
+      "full_answer_logprob_b": -2.7098946571350098,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08488626033067703,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709886312484741,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1046",
+      "window_start": 1664,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08495527505874634,
+      "full_answer_logprob_b": -2.7099552154541016,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08494693040847778,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.709946870803833,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08489897847175598,
+      "full_answer_logprob_b": -2.7098991870880127,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08489075303077698,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709890842437744,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1001",
+      "window_start": 2432,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08469909429550171,
+      "full_answer_logprob_b": -2.7096993923187256,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08469098806381226,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709691047668457,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1021",
+      "window_start": 640,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0848846435546875,
+      "full_answer_logprob_b": -2.7098846435546875,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.556489552167477e-06,
+        -0.08487629890441895,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.556489552167477e-06,
+        -2.709876298904419,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1023",
+      "window_start": 1408,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08498942852020264,
+      "full_answer_logprob_b": -2.709989547729492,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08498120307922363,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7099812030792236,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1046",
+      "window_start": 1920,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0848936140537262,
+      "full_answer_logprob_b": -2.7098937034606934,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08488538861274719,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709885358810425,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_160",
+      "participant_id": "AIREADI-1030",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08512234687805176,
+      "full_answer_logprob_b": -2.7101221084594727,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08511412143707275,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.710114002227783,
+        -1.7881377516459906e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1001",
+      "window_start": 1024,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08499270677566528,
+      "full_answer_logprob_b": -2.7099928855895996,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08498448133468628,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709984540939331,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08485933393239975,
+      "full_answer_logprob_b": -2.7098593711853027,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08485110849142075,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709851026535034,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1011",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0846615731716156,
+      "full_answer_logprob_b": -2.7096617221832275,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.033323527139146e-06,
+        -0.0846528708934784,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.033323527139146e-06,
+        -2.709652900695801,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1044",
+      "window_start": 2176,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08485636115074158,
+      "full_answer_logprob_b": -2.7098562717437744,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.08484837412834167,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.709848403930664,
+        -1.7881377516459906e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1048",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0847267434000969,
+      "full_answer_logprob_b": -2.7097268104553223,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.033323527139146e-06,
+        -0.08471804112195969,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.033323527139146e-06,
+        -2.7097179889678955,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1030",
+      "window_start": 1536,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08488637208938599,
+      "full_answer_logprob_b": -2.7098865509033203,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08487826585769653,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7098782062530518,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1037",
+      "window_start": 2432,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08489634096622467,
+      "full_answer_logprob_b": -2.7098963260650635,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.08488823473453522,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.709888219833374,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1008",
+      "window_start": 1664,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08488769084215164,
+      "full_answer_logprob_b": -2.709887742996216,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.08487958461046219,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.7098796367645264,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1018",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9241418242454529,
+      "p_b_given_a_or_b": 0.07585818320512772,
+      "a_minus_b_logit": 2.5,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.09379398077726364,
+      "full_answer_logprob_b": -2.5937938690185547,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.09378587454557419,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.5937857627868652,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1016",
+      "window_start": 512,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08480490744113922,
+      "full_answer_logprob_b": -2.7098050117492676,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08479668200016022,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709796667098999,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1015",
+      "window_start": 512,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0849417895078659,
+      "full_answer_logprob_b": -2.709941864013672,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.0849335640668869,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7099335193634033,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1043",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08498887717723846,
+      "full_answer_logprob_b": -2.709989070892334,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08498065173625946,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7099807262420654,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1010",
+      "window_start": 1024,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0846254825592041,
+      "full_answer_logprob_b": -2.709625720977783,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.0846174955368042,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.7096176147460938,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1010",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08489366620779037,
+      "full_answer_logprob_b": -2.7098937034606934,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.152531907195225e-06,
+        -0.08488472551107407,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.152531907195225e-06,
+        -2.7098846435546875,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1040",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0848786011338234,
+      "full_answer_logprob_b": -2.709878921508789,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08487049490213394,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7098705768585205,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1030",
+      "window_start": 2688,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0847332626581192,
+      "full_answer_logprob_b": -2.709733486175537,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.0847252756357193,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.7097253799438477,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1001",
+      "window_start": 640,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.084950290620327,
+      "full_answer_logprob_b": -2.7099502086639404,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.271740287251305e-06,
+        -0.08494123071432114,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.271740287251305e-06,
+        -2.7099411487579346,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1030",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0848752036690712,
+      "full_answer_logprob_b": -2.7098753452301025,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.08486709743738174,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.709867000579834,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1024",
+      "window_start": 1536,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08470803499221802,
+      "full_answer_logprob_b": -2.7097082138061523,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.152531907195225e-06,
+        -0.08469909429550171,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.152531907195225e-06,
+        -2.7096991539001465,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "above_180",
+      "participant_id": "AIREADI-1030",
+      "window_start": 1408,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9324532747268677,
+      "p_b_given_a_or_b": 0.06754668802022934,
+      "a_minus_b_logit": 2.625,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.08496324717998505,
+      "full_answer_logprob_b": -2.70996356010437,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.0849551409482956,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.7099552154541016,
+        -1.9073468138230965e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 2176,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07266541570425034,
+      "full_answer_logprob_b": -2.8226656913757324,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07265742868185043,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822657346725464,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1004",
+      "window_start": 1920,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07271851599216461,
+      "full_answer_logprob_b": -2.822718858718872,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07271052896976471,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8227105140686035,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1023",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07280952483415604,
+      "full_answer_logprob_b": -2.8228096961975098,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07280141860246658,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822801351547241,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1006",
+      "window_start": 1152,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07281971722841263,
+      "full_answer_logprob_b": -2.8228201866149902,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07281173020601273,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8228118419647217,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 2304,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07268913835287094,
+      "full_answer_logprob_b": -2.8226895332336426,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07268115133047104,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822681188583374,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1006",
+      "window_start": 2560,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07268571108579636,
+      "full_answer_logprob_b": -2.822685956954956,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.0726776048541069,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8226776123046875,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1040",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07278480380773544,
+      "full_answer_logprob_b": -2.8227851390838623,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07277681678533554,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8227767944335938,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1037",
+      "window_start": 0,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07276873290538788,
+      "full_answer_logprob_b": -2.8227691650390625,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07276062667369843,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822760581970215,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07269977778196335,
+      "full_answer_logprob_b": -2.822700023651123,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07269179075956345,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8226916790008545,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 2048,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07268494367599487,
+      "full_answer_logprob_b": -2.8226852416992188,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07267671823501587,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822676658630371,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1025",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0726790800690651,
+      "full_answer_logprob_b": -2.822679281234741,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.07267073541879654,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.8226706981658936,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1046",
+      "window_start": 640,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.0728396624326706,
+      "full_answer_logprob_b": -2.8228399753570557,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07283167541027069,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822831630706787,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1046",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07268848270177841,
+      "full_answer_logprob_b": -2.8226888179779053,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07268037647008896,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8226804733276367,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1048",
+      "window_start": 1792,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07284809648990631,
+      "full_answer_logprob_b": -2.8228485584259033,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.07283999025821686,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.8228399753570557,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1012",
+      "window_start": 768,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07281585782766342,
+      "full_answer_logprob_b": -2.8228161334991455,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.07280751317739487,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.822807550430298,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1006",
+      "window_start": 2688,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07282060384750366,
+      "full_answer_logprob_b": -2.8228209018707275,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07281261682510376,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822812557220459,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1050",
+      "window_start": 2688,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07275909930467606,
+      "full_answer_logprob_b": -2.8227591514587402,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07275087386369705,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8227508068084717,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1030",
+      "window_start": 256,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07274899631738663,
+      "full_answer_logprob_b": -2.822749614715576,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07274100929498672,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.8227410316467285,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.07269878685474396,
+      "full_answer_logprob_b": -2.8226990699768066,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07269079983234406,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822690725326538,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "sustained_above_180_15m",
+      "participant_id": "AIREADI-1030",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9399133324623108,
+      "p_b_given_a_or_b": 0.06008664891123772,
+      "a_minus_b_logit": 2.75,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.072731152176857,
+      "full_answer_logprob_b": -2.8227314949035645,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.07272316515445709,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.822723150253296,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1031",
+      "window_start": 2304,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1184421181678772,
+      "full_answer_logprob_b": -2.3684425354003906,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11843270063400269,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3684327602386475,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1015",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1189698800444603,
+      "full_answer_logprob_b": -2.3689703941345215,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.6756979322235566e-06,
+        -0.11896129697561264,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.6756979322235566e-06,
+        -2.3689613342285156,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1031",
+      "window_start": 1152,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11909793317317963,
+      "full_answer_logprob_b": -2.36909818649292,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11908839643001556,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3690884113311768,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1023",
+      "window_start": 2688,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11850927025079727,
+      "full_answer_logprob_b": -2.368509531021118,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11849973350763321,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.368499755859375,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1046",
+      "window_start": 1664,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11869031935930252,
+      "full_answer_logprob_b": -2.3686904907226562,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11868078261613846,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.368680715560913,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1021",
+      "window_start": 1024,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11834948509931564,
+      "full_answer_logprob_b": -2.36834979057312,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11833982914686203,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368339776992798,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1021",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11903095990419388,
+      "full_answer_logprob_b": -2.3690314292907715,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11902130395174026,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.369021415710449,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1004",
+      "window_start": 128,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11895569413900375,
+      "full_answer_logprob_b": -2.368955612182617,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11894615739583969,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.368946075439453,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1037",
+      "window_start": 0,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11867933720350266,
+      "full_answer_logprob_b": -2.3686795234680176,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.794906312279636e-06,
+        -0.1186705157160759,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.794906312279636e-06,
+        -2.3686704635620117,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1015",
+      "window_start": 768,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11894668638706207,
+      "full_answer_logprob_b": -2.3689470291137695,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11893726885318756,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3689372539520264,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1015",
+      "window_start": 2304,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11877584457397461,
+      "full_answer_logprob_b": -2.368776321411133,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.629365427419543e-06,
+        -0.1187664270401001,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.629365427419543e-06,
+        -2.3687663078308105,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1048",
+      "window_start": 1664,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11880580335855484,
+      "full_answer_logprob_b": -2.3688061237335205,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11879638582468033,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3687963485717773,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1044",
+      "window_start": 1920,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11875064671039581,
+      "full_answer_logprob_b": -2.368751049041748,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.1187412291765213,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.368741273880005,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1023",
+      "window_start": 256,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11917083710432053,
+      "full_answer_logprob_b": -2.369171142578125,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11916141957044601,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.369161367416382,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1024",
+      "window_start": 2176,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11868990957736969,
+      "full_answer_logprob_b": -2.368690252304077,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11868025362491608,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368680238723755,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1001",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11874736845493317,
+      "full_answer_logprob_b": -2.3687477111816406,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11873795092105865,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3687379360198975,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1011",
+      "window_start": 640,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11891155689954758,
+      "full_answer_logprob_b": -2.3689117431640625,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11890202015638351,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3689019680023193,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1043",
+      "window_start": 2688,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11852749437093735,
+      "full_answer_logprob_b": -2.368527889251709,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.629365427419543e-06,
+        -0.11851783841848373,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.629365427419543e-06,
+        -2.3685178756713867,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1006",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11868395656347275,
+      "full_answer_logprob_b": -2.3686842918395996,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.510157047363464e-06,
+        -0.11867453902959824,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.510157047363464e-06,
+        -2.3686745166778564,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "rise_50_30m",
+      "participant_id": "AIREADI-1010",
+      "window_start": 128,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1186959445476532,
+      "full_answer_logprob_b": -2.3686962127685547,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.794906312279636e-06,
+        -0.11868724226951599,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.794906312279636e-06,
+        -2.368687152862549,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1010",
+      "window_start": 2048,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11880096048116684,
+      "full_answer_logprob_b": -2.3688011169433594,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11879130452871323,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368791341781616,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1008",
+      "window_start": 2176,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1184845045208931,
+      "full_answer_logprob_b": -2.3684849739074707,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11847484856843948,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.3684749603271484,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1018",
+      "window_start": 2688,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11923348903656006,
+      "full_answer_logprob_b": -2.369234085083008,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.119223952293396,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.3692240715026855,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1023",
+      "window_start": 512,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.119241863489151,
+      "full_answer_logprob_b": -2.369241952896118,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.629365427419543e-06,
+        -0.11923220753669739,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.629365427419543e-06,
+        -2.369232177734375,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1043",
+      "window_start": 256,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11843166500329971,
+      "full_answer_logprob_b": -2.36843204498291,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.1184220090508461,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368422031402588,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1048",
+      "window_start": 1536,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11917942017316818,
+      "full_answer_logprob_b": -2.3691799640655518,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11916988343000412,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.3691699504852295,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1011",
+      "window_start": 1152,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11853956431150436,
+      "full_answer_logprob_b": -2.368539571762085,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11852990835905075,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368529796600342,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1008",
+      "window_start": 2560,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11919773370027542,
+      "full_answer_logprob_b": -2.3691978454589844,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.794906312279636e-06,
+        -0.11918903142213821,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.794906312279636e-06,
+        -2.3691890239715576,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1030",
+      "window_start": 0,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11931949853897095,
+      "full_answer_logprob_b": -2.3693199157714844,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.629365427419543e-06,
+        -0.11931008100509644,
+        -1.7881377516459906e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.629365427419543e-06,
+        -2.369310140609741,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1012",
+      "window_start": 640,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11846650391817093,
+      "full_answer_logprob_b": -2.36846661567688,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11845684796571732,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.3684568405151367,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1004",
+      "window_start": 256,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11851385980844498,
+      "full_answer_logprob_b": -2.368514060974121,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.986990567587782e-06,
+        -0.11850396543741226,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.986990567587782e-06,
+        -2.368504047393799,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1023",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11843908578157425,
+      "full_answer_logprob_b": -2.3684394359588623,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.867782187531702e-06,
+        -0.11842931061983109,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.867782187531702e-06,
+        -2.36842942237854,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1012",
+      "window_start": 0,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1183190867304802,
+      "full_answer_logprob_b": -2.368319272994995,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11830943077802658,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368309497833252,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1012",
+      "window_start": 1408,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1184510663151741,
+      "full_answer_logprob_b": -2.3684513568878174,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.986990567587782e-06,
+        -0.11844117194414139,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.986990567587782e-06,
+        -2.368441104888916,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1001",
+      "window_start": 2432,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11891748756170273,
+      "full_answer_logprob_b": -2.36891770362854,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.629365427419543e-06,
+        -0.11890795081853867,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.629365427419543e-06,
+        -2.368907928466797,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1008",
+      "window_start": 2304,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11840645968914032,
+      "full_answer_logprob_b": -2.3684067726135254,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.1183968037366867,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368396759033203,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1004",
+      "window_start": 1536,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11915427446365356,
+      "full_answer_logprob_b": -2.369154691696167,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.986990567587782e-06,
+        -0.11914438009262085,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.986990567587782e-06,
+        -2.3691444396972656,
+        -2.50339189733495e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1040",
+      "window_start": 384,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11849308013916016,
+      "full_answer_logprob_b": -2.3684933185577393,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.794906312279636e-06,
+        -0.11848437786102295,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.794906312279636e-06,
+        -2.3684844970703125,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1010",
+      "window_start": 1664,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11833857744932175,
+      "full_answer_logprob_b": -2.3683388233184814,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11832892149686813,
+        -1.9073468138230965e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.368328809738159,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "fall_50_30m",
+      "participant_id": "AIREADI-1031",
+      "window_start": 1024,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9046505093574524,
+      "p_b_given_a_or_b": 0.09534946084022522,
+      "a_minus_b_logit": 2.25,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.11879187077283859,
+      "full_answer_logprob_b": -2.3687918186187744,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.748573807475623e-06,
+        -0.11878209561109543,
+        -2.0265558760002023e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.748573807475623e-06,
+        -2.3687820434570312,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1050",
+      "window_start": 896,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10586785525083542,
+      "full_answer_logprob_b": -2.480868101119995,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.10585986822843552,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.4808597564697266,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1048",
+      "window_start": 1664,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10619745403528214,
+      "full_answer_logprob_b": -2.4811980724334717,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10618934780359268,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.481189250946045,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1015",
+      "window_start": 512,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1059078648686409,
+      "full_answer_logprob_b": -2.480908155441284,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10589975863695145,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4808998107910156,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1037",
+      "window_start": 1536,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10625939816236496,
+      "full_answer_logprob_b": -2.481259822845459,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.10625141113996506,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.4812514781951904,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1015",
+      "window_start": 2304,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.106222964823246,
+      "full_answer_logprob_b": -2.4812233448028564,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10621485859155655,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.481214761734009,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1023",
+      "window_start": 2048,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10584735125303268,
+      "full_answer_logprob_b": -2.4808478355407715,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.152531907195225e-06,
+        -0.10583852976560593,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.152531907195225e-06,
+        -2.4808385372161865,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10627526044845581,
+      "full_answer_logprob_b": -2.4812753200531006,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.10626727342605591,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.481267213821411,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1024",
+      "window_start": 1792,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10590057075023651,
+      "full_answer_logprob_b": -2.480900764465332,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10589246451854706,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4808924198150635,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1016",
+      "window_start": 2560,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10619831085205078,
+      "full_answer_logprob_b": -2.481198787689209,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10619020462036133,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4811902046203613,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1021",
+      "window_start": 1792,
+      "gold": "(a)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10589657723903656,
+      "full_answer_logprob_b": -2.4808967113494873,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.10588870942592621,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.480888605117798,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1044",
+      "window_start": 512,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10592588037252426,
+      "full_answer_logprob_b": -2.480926275253296,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10591777414083481,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4809176921844482,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1012",
+      "window_start": 1280,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10592641681432724,
+      "full_answer_logprob_b": -2.480926990509033,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10591831058263779,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4809184074401855,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1016",
+      "window_start": 0,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10629796236753464,
+      "full_answer_logprob_b": -2.4812984466552734,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -7.152531907195225e-06,
+        -0.10628914088010788,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -7.152531907195225e-06,
+        -2.4812891483306885,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1040",
+      "window_start": 2560,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10620667040348053,
+      "full_answer_logprob_b": -2.4812068939208984,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10619856417179108,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.48119854927063,
+        -2.0265558760002023e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1031",
+      "window_start": 896,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10624805092811584,
+      "full_answer_logprob_b": -2.481248617172241,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10623994469642639,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4812400341033936,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1012",
+      "window_start": 1920,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10615500062704086,
+      "full_answer_logprob_b": -2.4811553955078125,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10614689439535141,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.481146812438965,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1040",
+      "window_start": 0,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.1056913435459137,
+      "full_answer_logprob_b": -2.480692148208618,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10568323731422424,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4806833267211914,
+        -2.3841830625315197e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1023",
+      "window_start": 1920,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10585787147283554,
+      "full_answer_logprob_b": -2.480858325958252,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.198863957251888e-06,
+        -0.10585000365972519,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.198863957251888e-06,
+        -2.4808499813079834,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1025",
+      "window_start": 2432,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10582077503204346,
+      "full_answer_logprob_b": -2.480821132659912,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.318072337307967e-06,
+        -0.10581278800964355,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.318072337307967e-06,
+        -2.4808127880096436,
+        -2.264974000354414e-06,
+        0.0
+      ]
+    },
+    {
+      "task_id": "tir_70_180_above_90",
+      "participant_id": "AIREADI-1031",
+      "window_start": 1536,
+      "gold": "(b)",
+      "p_a_given_a_or_b": 0.9149009585380554,
+      "p_b_given_a_or_b": 0.08509904891252518,
+      "a_minus_b_logit": 2.375,
+      "token_preference": "(a)",
+      "full_answer_logprob_a": -0.10585864633321762,
+      "full_answer_logprob_b": -2.4808590412139893,
+      "full_answer_preference": "(a)",
+      "a_token_logprobs": [
+        -6.437280717364047e-06,
+        -0.10585054010152817,
+        -1.6689286894688848e-06,
+        0.0
+      ],
+      "b_token_logprobs": [
+        -6.437280717364047e-06,
+        -2.4808504581451416,
+        -2.145764938177308e-06,
+        0.0
+      ]
+    }
+  ]
+}
