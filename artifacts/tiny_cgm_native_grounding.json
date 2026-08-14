@@ -1,0 +1,1513 @@
+{
+  "experiment": "tiny_cgm_native_grounding",
+  "stage5_repo": "OpenTSLM/llama-3.2-1b-ecg-sp",
+  "seed": 42,
+  "task": "above_180",
+  "epochs": 20,
+  "batch_size": 2,
+  "n_yes": 10,
+  "n_no": 10,
+  "input_format": {
+    "normalization": "per_window_zscore",
+    "normalization_std": "population_sd_unbiased_false",
+    "text_context": [
+      "sensor_type_cgm",
+      "units_mg_dl",
+      "measurement_count",
+      "nominal_5_minute_sampling",
+      "original_window_mean",
+      "original_window_std"
+    ],
+    "target": "Yes/No plus maximum glucose in mg/dL"
+  },
+  "training": {
+    "frozen": [
+      "stage5_patch_embedding",
+      "stage5_position_embedding",
+      "stage5_input_norm",
+      "stage5_transformers_1_4",
+      "stage5_llm",
+      "stage5_lora"
+    ],
+    "trainable": [
+      "stage5_transformer_5",
+      "stage5_transformer_6",
+      "stage5_projector"
+    ],
+    "lr_t5_t6": 0.0002,
+    "lr_projector": 0.0001,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "pairwise_aux_weight": 1.0,
+    "dropout": "disabled_via_eval_mode"
+  },
+  "test_participants_sealed": 6,
+  "examples": [
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 512,
+      "label_yes": true,
+      "window_mean": 141.0546875,
+      "window_std": 18.36577606201172,
+      "maximum": 200.0,
+      "answer_text": "Yes. Maximum glucose: 200 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2688,
+      "label_yes": true,
+      "window_mean": 140.125,
+      "window_std": 12.267207145690918,
+      "maximum": 192.0,
+      "answer_text": "Yes. Maximum glucose: 192 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "label_yes": true,
+      "window_mean": 127.375,
+      "window_std": 22.82781982421875,
+      "maximum": 215.0,
+      "answer_text": "Yes. Maximum glucose: 215 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1152,
+      "label_yes": true,
+      "window_mean": 260.8984375,
+      "window_std": 35.551204681396484,
+      "maximum": 317.0,
+      "answer_text": "Yes. Maximum glucose: 317 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2560,
+      "label_yes": true,
+      "window_mean": 174.78125,
+      "window_std": 23.12700653076172,
+      "maximum": 214.0,
+      "answer_text": "Yes. Maximum glucose: 214 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 896,
+      "label_yes": true,
+      "window_mean": 156.3046875,
+      "window_std": 32.60525131225586,
+      "maximum": 239.0,
+      "answer_text": "Yes. Maximum glucose: 239 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 640,
+      "label_yes": true,
+      "window_mean": 140.1015625,
+      "window_std": 35.09292221069336,
+      "maximum": 218.0,
+      "answer_text": "Yes. Maximum glucose: 218 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "label_yes": true,
+      "window_mean": 162.859375,
+      "window_std": 13.328619956970215,
+      "maximum": 190.0,
+      "answer_text": "Yes. Maximum glucose: 190 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1792,
+      "label_yes": true,
+      "window_mean": 152.8359375,
+      "window_std": 12.531072616577148,
+      "maximum": 182.0,
+      "answer_text": "Yes. Maximum glucose: 182 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1792,
+      "label_yes": true,
+      "window_mean": 223.1796875,
+      "window_std": 45.719154357910156,
+      "maximum": 310.0,
+      "answer_text": "Yes. Maximum glucose: 310 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 128,
+      "label_yes": false,
+      "window_mean": 116.0546875,
+      "window_std": 11.04699420928955,
+      "maximum": 141.0,
+      "answer_text": "No. Maximum glucose: 141 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 768,
+      "label_yes": false,
+      "window_mean": 157.9296875,
+      "window_std": 9.47297477722168,
+      "maximum": 178.0,
+      "answer_text": "No. Maximum glucose: 178 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "label_yes": false,
+      "window_mean": 122.1640625,
+      "window_std": 21.363950729370117,
+      "maximum": 168.0,
+      "answer_text": "No. Maximum glucose: 168 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1536,
+      "label_yes": false,
+      "window_mean": 109.765625,
+      "window_std": 2.4542195796966553,
+      "maximum": 116.0,
+      "answer_text": "No. Maximum glucose: 116 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "label_yes": false,
+      "window_mean": 135.21875,
+      "window_std": 16.108972549438477,
+      "maximum": 171.0,
+      "answer_text": "No. Maximum glucose: 171 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "label_yes": false,
+      "window_mean": 100.265625,
+      "window_std": 16.19195556640625,
+      "maximum": 151.0,
+      "answer_text": "No. Maximum glucose: 151 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "label_yes": false,
+      "window_mean": 121.578125,
+      "window_std": 6.521130561828613,
+      "maximum": 136.0,
+      "answer_text": "No. Maximum glucose: 136 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2432,
+      "label_yes": false,
+      "window_mean": 124.625,
+      "window_std": 10.594072341918945,
+      "maximum": 151.0,
+      "answer_text": "No. Maximum glucose: 151 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 512,
+      "label_yes": false,
+      "window_mean": 137.6953125,
+      "window_std": 13.159810066223145,
+      "maximum": 163.0,
+      "answer_text": "No. Maximum glucose: 163 mg/dL."
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2432,
+      "label_yes": false,
+      "window_mean": 115.109375,
+      "window_std": 6.9543538093566895,
+      "maximum": 130.0,
+      "answer_text": "No. Maximum glucose: 130 mg/dL."
+    }
+  ],
+  "initial_pairwise": {
+    "balanced_accuracy": 0.5,
+    "yes_accuracy": 0.0,
+    "no_accuracy": 1.0,
+    "predicted_yes": 0,
+    "predicted_no": 20,
+    "mean_p_correct": 0.5029792949557305,
+    "margin_sd": 0.06282808631658554
+  },
+  "initial_generation": {
+    "valid_decision_rate": 1.0,
+    "decision_accuracy": 0.5,
+    "numeric_output_rate": 0.0,
+    "max_accuracy_within_1": 0.0,
+    "fully_correct_rate": 0.0,
+    "samples": [
+      {
+        "gold_yes": true,
+        "gold_max": 200.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1048",
+        "window_start": 512,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 192.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1012",
+        "window_start": 2688,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 215.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1040",
+        "window_start": 1024,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 317.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 1152,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 214.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1025",
+        "window_start": 2560,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 239.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1040",
+        "window_start": 896,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 218.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 640,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 190.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1031",
+        "window_start": 2432,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 182.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1025",
+        "window_start": 1792,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 310.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 1792,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 141.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1024",
+        "window_start": 128,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 178.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1037",
+        "window_start": 768,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 168.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1015",
+        "window_start": 0,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 116.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1016",
+        "window_start": 1536,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 171.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1010",
+        "window_start": 640,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 151.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 128,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 136.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 1280,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 151.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1012",
+        "window_start": 2432,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 163.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 512,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 130.0,
+        "predicted_yes": false,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1021",
+        "window_start": 2432,
+        "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      }
+    ]
+  },
+  "initial_representation": {
+    "encoder": {
+      "mean_feature_std": 2.225909838671214e-06,
+      "yes_no_centroid_cosine": 1.0000003576278687,
+      "yes_no_centroid_l2_per_sqrt_dim": 4.06297931476729e-06
+    },
+    "projector": {
+      "mean_feature_std": 1.4052507140149828e-06,
+      "yes_no_centroid_cosine": 0.9999990463256836,
+      "yes_no_centroid_l2_per_sqrt_dim": 9.975854027288733e-07
+    }
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "sequence_loss": null,
+      "pairwise_aux_loss": null,
+      "total_loss": null,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.5029792949557305,
+        "margin_sd": 0.06282808631658554
+      },
+      "generation_metrics": {
+        "valid_decision_rate": 1.0,
+        "decision_accuracy": 0.5,
+        "numeric_output_rate": 0.0,
+        "max_accuracy_within_1": 0.0,
+        "fully_correct_rate": 0.0,
+        "samples": [
+          {
+            "gold_yes": true,
+            "gold_max": 200.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1048",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 192.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2688,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 215.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 1024,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 317.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1152,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 214.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 2560,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 239.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 896,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 218.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 190.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1031",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 182.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 310.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 141.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1024",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 178.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1037",
+            "window_start": 768,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 168.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1015",
+            "window_start": 0,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 116.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1016",
+            "window_start": 1536,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 171.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1010",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 136.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 1280,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 163.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 130.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1021",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          }
+        ]
+      }
+    },
+    {
+      "epoch": 1,
+      "sequence_loss": 5.9675374031066895,
+      "pairwise_aux_loss": 0.7191174268722534,
+      "total_loss": 6.686654806137085,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.49995515793561934,
+        "margin_sd": 0.055901698768138885
+      },
+      "generation_metrics": null
+    },
+    {
+      "epoch": 2,
+      "sequence_loss": 5.824846410751343,
+      "pairwise_aux_loss": 0.7148978114128113,
+      "total_loss": 6.539744138717651,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.50148965716362,
+        "margin_sd": 0.0611700601875782
+      },
+      "generation_metrics": null
+    },
+    {
+      "epoch": 5,
+      "sequence_loss": 5.047420692443848,
+      "pairwise_aux_loss": 0.7157663226127624,
+      "total_loss": 5.763186979293823,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.49549624919891355,
+        "margin_sd": 0.07339286804199219
+      },
+      "generation_metrics": {
+        "valid_decision_rate": 1.0,
+        "decision_accuracy": 0.5,
+        "numeric_output_rate": 0.0,
+        "max_accuracy_within_1": 0.0,
+        "fully_correct_rate": 0.0,
+        "samples": [
+          {
+            "gold_yes": true,
+            "gold_max": 200.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1048",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 192.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2688,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 215.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 1024,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 317.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1152,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 214.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 2560,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 239.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 896,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 218.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 190.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1031",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 182.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 310.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 141.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1024",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 178.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1037",
+            "window_start": 768,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 168.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1015",
+            "window_start": 0,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 116.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1016",
+            "window_start": 1536,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 171.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1010",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 136.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 1280,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 163.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 130.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1021",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          }
+        ]
+      }
+    },
+    {
+      "epoch": 10,
+      "sequence_loss": 4.842419099807739,
+      "pairwise_aux_loss": 0.7119686365127563,
+      "total_loss": 5.554387712478638,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.5030141711235047,
+        "margin_sd": 0.040555354207754135
+      },
+      "generation_metrics": {
+        "valid_decision_rate": 1.0,
+        "decision_accuracy": 0.5,
+        "numeric_output_rate": 0.0,
+        "max_accuracy_within_1": 0.0,
+        "fully_correct_rate": 0.0,
+        "samples": [
+          {
+            "gold_yes": true,
+            "gold_max": 200.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1048",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 192.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2688,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 215.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 1024,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 317.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1152,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 214.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 2560,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 239.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 896,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 218.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 190.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1031",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 182.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 310.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1792,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 141.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1024",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 178.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1037",
+            "window_start": 768,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 168.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1015",
+            "window_start": 0,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 116.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1016",
+            "window_start": 1536,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 171.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1010",
+            "window_start": 640,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 128,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 136.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 1280,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 163.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 512,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 130.0,
+            "predicted_yes": false,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1021",
+            "window_start": 2432,
+            "raw_generation": " No. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          }
+        ]
+      }
+    },
+    {
+      "epoch": 15,
+      "sequence_loss": 4.708661413192749,
+      "pairwise_aux_loss": 0.6980474114418029,
+      "total_loss": 5.406708812713623,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 0.0,
+        "no_accuracy": 1.0,
+        "predicted_yes": 0,
+        "predicted_no": 20,
+        "mean_p_correct": 0.5015245348215103,
+        "margin_sd": 0.05553270876407623
+      },
+      "generation_metrics": null
+    },
+    {
+      "epoch": 20,
+      "sequence_loss": 4.490931129455566,
+      "pairwise_aux_loss": 0.7021647095680237,
+      "total_loss": 5.1930958271026615,
+      "pairwise_metrics": {
+        "balanced_accuracy": 0.5,
+        "yes_accuracy": 1.0,
+        "no_accuracy": 0.0,
+        "predicted_yes": 20,
+        "predicted_no": 0,
+        "mean_p_correct": 0.4971104711294174,
+        "margin_sd": 0.05877029150724411
+      },
+      "generation_metrics": {
+        "valid_decision_rate": 1.0,
+        "decision_accuracy": 0.5,
+        "numeric_output_rate": 0.0,
+        "max_accuracy_within_1": 0.0,
+        "fully_correct_rate": 0.0,
+        "samples": [
+          {
+            "gold_yes": true,
+            "gold_max": 200.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1048",
+            "window_start": 512,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 192.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2688,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 215.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 1024,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 317.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1152,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 214.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 2560,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 239.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1040",
+            "window_start": 896,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 218.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 640,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 190.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1031",
+            "window_start": 2432,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 182.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1025",
+            "window_start": 1792,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": true,
+            "gold_max": 310.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1018",
+            "window_start": 1792,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 141.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1024",
+            "window_start": 128,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 178.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1037",
+            "window_start": 768,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 168.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1015",
+            "window_start": 0,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 116.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1016",
+            "window_start": 1536,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 171.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1010",
+            "window_start": 640,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 128,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 136.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 1280,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 151.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1012",
+            "window_start": 2432,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 163.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1008",
+            "window_start": 512,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          },
+          {
+            "gold_yes": false,
+            "gold_max": 130.0,
+            "predicted_yes": true,
+            "predicted_max": null,
+            "participant_id": "AIREADI-1021",
+            "window_start": 2432,
+            "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+          }
+        ]
+      }
+    }
+  ],
+  "final_pairwise": {
+    "balanced_accuracy": 0.5,
+    "yes_accuracy": 1.0,
+    "no_accuracy": 0.0,
+    "predicted_yes": 20,
+    "predicted_no": 0,
+    "mean_p_correct": 0.4971104711294174,
+    "margin_sd": 0.05877029150724411
+  },
+  "final_generation": {
+    "valid_decision_rate": 1.0,
+    "decision_accuracy": 0.5,
+    "numeric_output_rate": 0.0,
+    "max_accuracy_within_1": 0.0,
+    "fully_correct_rate": 0.0,
+    "samples": [
+      {
+        "gold_yes": true,
+        "gold_max": 200.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1048",
+        "window_start": 512,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 192.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1012",
+        "window_start": 2688,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 215.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1040",
+        "window_start": 1024,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 317.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 1152,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 214.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1025",
+        "window_start": 2560,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 239.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1040",
+        "window_start": 896,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 218.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 640,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 190.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1031",
+        "window_start": 2432,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 182.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1025",
+        "window_start": 1792,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": true,
+        "gold_max": 310.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1018",
+        "window_start": 1792,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 141.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1024",
+        "window_start": 128,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 178.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1037",
+        "window_start": 768,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 168.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1015",
+        "window_start": 0,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 116.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1016",
+        "window_start": 1536,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 171.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1010",
+        "window_start": 640,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 151.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 128,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 136.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 1280,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 151.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1012",
+        "window_start": 2432,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 163.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1008",
+        "window_start": 512,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      },
+      {
+        "gold_yes": false,
+        "gold_max": 130.0,
+        "predicted_yes": true,
+        "predicted_max": null,
+        "participant_id": "AIREADI-1021",
+        "window_start": 2432,
+        "raw_generation": " Yes. The continuous glucose monitor (CGM) signal provided shows a regular rhythm with consistent P waves, QRS complexes"
+      }
+    ]
+  },
+  "final_representation": {
+    "encoder": {
+      "mean_feature_std": 0.00044784980127587914,
+      "yes_no_centroid_cosine": 0.9999515414237976,
+      "yes_no_centroid_l2_per_sqrt_dim": 0.000721885240636766
+    },
+    "projector": {
+      "mean_feature_std": 0.0024144924245774746,
+      "yes_no_centroid_cosine": 0.9999122619628906,
+      "yes_no_centroid_l2_per_sqrt_dim": 0.0015947703504934907
+    }
+  }
+}

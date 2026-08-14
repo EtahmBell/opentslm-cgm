@@ -1,0 +1,725 @@
+{
+  "experiment": "stage5_repaired_tiny_overfit_pairwise",
+  "seed": 42,
+  "task": "above_180",
+  "epochs": 30,
+  "n_yes": 10,
+  "n_no": 10,
+  "normalization": {
+    "type": "fixed_training_cohort",
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711
+  },
+  "optimizer": {
+    "lr_t5_t6": 0.0002,
+    "lr_projector": 0.0001,
+    "weight_decay": 0.01,
+    "grad_clip_norm": 1.0
+  },
+  "test_participants_sealed": 6,
+  "selected_examples": [
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 512,
+      "gold": "(a)",
+      "window_min": 119.0,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2688,
+      "gold": "(a)",
+      "window_min": 118.0,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "gold": "(a)",
+      "window_min": 84.0,
+      "window_max": 215.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1152,
+      "gold": "(a)",
+      "window_min": 164.0,
+      "window_max": 317.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2560,
+      "gold": "(a)",
+      "window_min": 135.0,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 896,
+      "gold": "(a)",
+      "window_min": 100.0,
+      "window_max": 239.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 640,
+      "gold": "(a)",
+      "window_min": 83.0,
+      "window_max": 218.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "gold": "(a)",
+      "window_min": 133.0,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1792,
+      "gold": "(a)",
+      "window_min": 134.0,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1792,
+      "gold": "(a)",
+      "window_min": 123.0,
+      "window_max": 310.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 128,
+      "gold": "(b)",
+      "window_min": 74.0,
+      "window_max": 141.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 768,
+      "gold": "(b)",
+      "window_min": 135.0,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "gold": "(b)",
+      "window_min": 77.0,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1536,
+      "gold": "(b)",
+      "window_min": 104.0,
+      "window_max": 116.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "gold": "(b)",
+      "window_min": 99.0,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "gold": "(b)",
+      "window_min": 74.0,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "gold": "(b)",
+      "window_min": 107.0,
+      "window_max": 136.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2432,
+      "gold": "(b)",
+      "window_min": 105.0,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 512,
+      "gold": "(b)",
+      "window_min": 110.0,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2432,
+      "gold": "(b)",
+      "window_min": 98.0,
+      "window_max": 130.0
+    }
+  ],
+  "results": {
+    "original_pairwise": {
+      "condition": "original_pairwise",
+      "display_name": "0 \u2014 ORIGINAL STAGE-5 + TRUE PAIRWISE CONTROL",
+      "parameter_audit": {
+        "early_encoder_trainable": 0,
+        "t5_t6_trainable": 659712,
+        "projector_trainable": 264448,
+        "llm_trainable": 0,
+        "lora_trainable": 0
+      },
+      "decision_tokens": {
+        "a_full_ids": [
+          2948,
+          8
+        ],
+        "b_full_ids": [
+          1921,
+          8
+        ],
+        "a_decision_token_id": 2948,
+        "b_decision_token_id": 1921
+      },
+      "first_step_gradients": {
+        "t5_t6_grad_norm": 0.0934869496879655,
+        "projector_grad_norm": 0.5072856788045041,
+        "loss": 1.9637140035629272,
+        "gold": "(a)"
+      },
+      "initial_representation": {
+        "encoder": {
+          "mean_feature_std": 1.53367886923661e-06,
+          "yes_no_centroid_cosine": 1.0000001192092896,
+          "yes_no_centroid_l2_per_sqrt_dim": 2.968039325423888e-06
+        },
+        "projector": {
+          "mean_feature_std": 9.272757779399399e-07,
+          "yes_no_centroid_cosine": 0.9999989867210388,
+          "yes_no_centroid_l2_per_sqrt_dim": 7.272457764884166e-07
+        }
+      },
+      "final_representation": {
+        "encoder": {
+          "mean_feature_std": 0.04670734703540802,
+          "yes_no_centroid_cosine": -0.047591403126716614,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.1967921406030655
+        },
+        "projector": {
+          "mean_feature_std": 0.1441342979669571,
+          "yes_no_centroid_cosine": 0.031726203858852386,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.21507173776626587
+        }
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "mean_training_loss": null,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.4992115400731564,
+          "mean_margin_a_minus_b": -1.7625,
+          "margin_sd": 0.03269677236676216
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 1.0293252035975455,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.5012440577149391,
+          "mean_margin_a_minus_b": -1.684375,
+          "margin_sd": 0.02462715469300747
+        },
+        {
+          "epoch": 2,
+          "mean_training_loss": 1.0119318969547748,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.5012620560824871,
+          "mean_margin_a_minus_b": -1.640625,
+          "margin_sd": 0.03991664946079254
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 0.9337659947574138,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.4969795987010002,
+          "mean_margin_a_minus_b": -1.36875,
+          "margin_sd": 0.040045205503702164
+        },
+        {
+          "epoch": 10,
+          "mean_training_loss": 0.7597595542669296,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.4993116080760956,
+          "mean_margin_a_minus_b": -0.721875,
+          "margin_sd": 0.03190110996365547
+        },
+        {
+          "epoch": 15,
+          "mean_training_loss": 0.7155574932694435,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.5229382827877999,
+          "mean_margin_a_minus_b": -0.690625,
+          "margin_sd": 0.17022986710071564
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.4724875457584858,
+          "balanced_accuracy": 0.75,
+          "yes_accuracy": 0.6,
+          "no_accuracy": 0.9,
+          "predicted_yes": 7,
+          "predicted_no": 13,
+          "mean_p_correct": 0.6671260485425592,
+          "mean_margin_a_minus_b": 0.2390625,
+          "margin_sd": 1.829471230506897
+        },
+        {
+          "epoch": 25,
+          "mean_training_loss": 0.9712011181138223,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.8,
+          "no_accuracy": 0.8,
+          "predicted_yes": 10,
+          "predicted_no": 10,
+          "mean_p_correct": 0.7218546466901898,
+          "mean_margin_a_minus_b": 2.4984375,
+          "margin_sd": 3.7451651096343994
+        },
+        {
+          "epoch": 30,
+          "mean_training_loss": 0.8432426038896665,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.8,
+          "no_accuracy": 0.8,
+          "predicted_yes": 10,
+          "predicted_no": 10,
+          "mean_p_correct": 0.7346629309817218,
+          "mean_margin_a_minus_b": 2.1296875,
+          "margin_sd": 3.5125813484191895
+        }
+      ],
+      "final_metrics": {
+        "balanced_accuracy": 0.8,
+        "yes_accuracy": 0.8,
+        "no_accuracy": 0.8,
+        "predicted_yes": 10,
+        "predicted_no": 10,
+        "mean_p_correct": 0.7346629309817218,
+        "mean_margin_a_minus_b": 2.1296875,
+        "margin_sd": 3.5125813484191895
+      },
+      "raw_generation_smoke": [
+        {
+          "gold": "(a)",
+          "participant_id": "AIREADI-1048",
+          "window_start": 512,
+          "raw_generation": "      "
+        },
+        {
+          "gold": "(b)",
+          "participant_id": "AIREADI-1024",
+          "window_start": 128,
+          "raw_generation": " No\nThe continuous glucose monitor"
+        }
+      ]
+    },
+    "repair_stage5_projector": {
+      "condition": "repair_stage5_projector",
+      "display_name": "1 \u2014 REPAIRED T5/T6 + STAGE-5 PROJECTOR",
+      "parameter_audit": {
+        "early_encoder_trainable": 0,
+        "t5_t6_trainable": 659712,
+        "projector_trainable": 264448,
+        "llm_trainable": 0,
+        "lora_trainable": 0
+      },
+      "decision_tokens": {
+        "a_full_ids": [
+          2948,
+          8
+        ],
+        "b_full_ids": [
+          1921,
+          8
+        ],
+        "a_decision_token_id": 2948,
+        "b_decision_token_id": 1921
+      },
+      "first_step_gradients": {
+        "t5_t6_grad_norm": 0.2836787924312769,
+        "projector_grad_norm": 0.9778816003259392,
+        "loss": 1.910224199295044,
+        "gold": "(a)"
+      },
+      "initial_representation": {
+        "encoder": {
+          "mean_feature_std": 0.2099500596523285,
+          "yes_no_centroid_cosine": 0.9434629678726196,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.3333759307861328
+        },
+        "projector": {
+          "mean_feature_std": 0.010088896378874779,
+          "yes_no_centroid_cosine": 0.9899902939796448,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.014521286822855473
+        }
+      },
+      "final_representation": {
+        "encoder": {
+          "mean_feature_std": 0.28296706080436707,
+          "yes_no_centroid_cosine": 0.718609094619751,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.5378988981246948
+        },
+        "projector": {
+          "mean_feature_std": 0.06387171149253845,
+          "yes_no_centroid_cosine": 0.9047582149505615,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.10848408192396164
+        }
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "mean_training_loss": null,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.499614043533802,
+          "mean_margin_a_minus_b": -1.784375,
+          "margin_sd": 0.04289579764008522
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 1.0227517873048781,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.4995794244110584,
+          "mean_margin_a_minus_b": -1.615625,
+          "margin_sd": 0.04192627593874931
+        },
+        {
+          "epoch": 2,
+          "mean_training_loss": 0.9089486815035344,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 0.0,
+          "no_accuracy": 1.0,
+          "predicted_yes": 0,
+          "predicted_no": 20,
+          "mean_p_correct": 0.5667051982134581,
+          "mean_margin_a_minus_b": -1.575,
+          "margin_sd": 0.8245812058448792
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 0.5665796686895191,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.7950608224608005,
+          "mean_margin_a_minus_b": 1.29921875,
+          "margin_sd": 3.895984172821045
+        },
+        {
+          "epoch": 10,
+          "mean_training_loss": 1.3146160725780647,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.8002352168550715,
+          "mean_margin_a_minus_b": 0.7375,
+          "margin_sd": 4.753208637237549
+        },
+        {
+          "epoch": 15,
+          "mean_training_loss": 1.0963978499756195,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.7939195850223768,
+          "mean_margin_a_minus_b": 1.4171875,
+          "margin_sd": 5.464451313018799
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.9825526747677941,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.7979969696258195,
+          "mean_margin_a_minus_b": 1.215625,
+          "margin_sd": 5.643836498260498
+        },
+        {
+          "epoch": 25,
+          "mean_training_loss": 1.2387182533508168,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.6,
+          "predicted_yes": 14,
+          "predicted_no": 6,
+          "mean_p_correct": 0.8044371521100402,
+          "mean_margin_a_minus_b": 1.2359375,
+          "margin_sd": 4.835285186767578
+        },
+        {
+          "epoch": 30,
+          "mean_training_loss": 0.8577512548479718,
+          "balanced_accuracy": 0.75,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.6,
+          "predicted_yes": 13,
+          "predicted_no": 7,
+          "mean_p_correct": 0.7520180463790893,
+          "mean_margin_a_minus_b": 0.8296875,
+          "margin_sd": 4.422387599945068
+        }
+      ],
+      "final_metrics": {
+        "balanced_accuracy": 0.75,
+        "yes_accuracy": 0.9,
+        "no_accuracy": 0.6,
+        "predicted_yes": 13,
+        "predicted_no": 7,
+        "mean_p_correct": 0.7520180463790893,
+        "mean_margin_a_minus_b": 0.8296875,
+        "margin_sd": 4.422387599945068
+      },
+      "raw_generation_smoke": [
+        {
+          "gold": "(a)",
+          "participant_id": "AIREADI-1048",
+          "window_start": 512,
+          "raw_generation": " \" \" \" \" \" \""
+        },
+        {
+          "gold": "(b)",
+          "participant_id": "AIREADI-1024",
+          "window_start": 128,
+          "raw_generation": " No\n"
+        }
+      ]
+    },
+    "repair_tsqa_projector": {
+      "condition": "repair_tsqa_projector",
+      "display_name": "2 \u2014 REPAIRED T5/T6 + TSQA PROJECTOR",
+      "parameter_audit": {
+        "early_encoder_trainable": 0,
+        "t5_t6_trainable": 659712,
+        "projector_trainable": 264448,
+        "llm_trainable": 0,
+        "lora_trainable": 0
+      },
+      "decision_tokens": {
+        "a_full_ids": [
+          2948,
+          8
+        ],
+        "b_full_ids": [
+          1921,
+          8
+        ],
+        "a_decision_token_id": 2948,
+        "b_decision_token_id": 1921
+      },
+      "first_step_gradients": {
+        "t5_t6_grad_norm": 6.658651302490316,
+        "projector_grad_norm": 14.63008442119783,
+        "loss": 0.3304581940174103,
+        "gold": "(a)"
+      },
+      "initial_representation": {
+        "encoder": {
+          "mean_feature_std": 0.2099500596523285,
+          "yes_no_centroid_cosine": 0.9434629678726196,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.3333759307861328
+        },
+        "projector": {
+          "mean_feature_std": 0.05601734668016434,
+          "yes_no_centroid_cosine": 0.8828898668289185,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.10157180577516556
+        }
+      },
+      "final_representation": {
+        "encoder": {
+          "mean_feature_std": 0.2643301486968994,
+          "yes_no_centroid_cosine": 0.8705711364746094,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.4838392734527588
+        },
+        "projector": {
+          "mean_feature_std": 0.08387304842472076,
+          "yes_no_centroid_cosine": 0.7173559665679932,
+          "yes_no_centroid_l2_per_sqrt_dim": 0.14998190104961395
+        }
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "mean_training_loss": null,
+          "balanced_accuracy": 0.5,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.0,
+          "predicted_yes": 20,
+          "predicted_no": 0,
+          "mean_p_correct": 0.49533173218369486,
+          "mean_margin_a_minus_b": 1.0453125,
+          "margin_sd": 0.33373185992240906
+        },
+        {
+          "epoch": 1,
+          "mean_training_loss": 0.9480351620470173,
+          "balanced_accuracy": 0.7,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.4,
+          "predicted_yes": 16,
+          "predicted_no": 4,
+          "mean_p_correct": 0.6466649604495615,
+          "mean_margin_a_minus_b": 3.2875,
+          "margin_sd": 2.4331860542297363
+        },
+        {
+          "epoch": 2,
+          "mean_training_loss": 1.0861474776698743,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.7385445491585415,
+          "mean_margin_a_minus_b": 2.4234375,
+          "margin_sd": 3.7943711280822754
+        },
+        {
+          "epoch": 5,
+          "mean_training_loss": 1.2316015216259983,
+          "balanced_accuracy": 0.75,
+          "yes_accuracy": 0.8,
+          "no_accuracy": 0.7,
+          "predicted_yes": 11,
+          "predicted_no": 9,
+          "mean_p_correct": 0.770813981507672,
+          "mean_margin_a_minus_b": -0.4078125,
+          "margin_sd": 5.985286235809326
+        },
+        {
+          "epoch": 10,
+          "mean_training_loss": 1.0328898438056058,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.798574493592605,
+          "mean_margin_a_minus_b": -0.021875,
+          "margin_sd": 6.39603328704834
+        },
+        {
+          "epoch": 15,
+          "mean_training_loss": 0.7887148971743955,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 0.9,
+          "no_accuracy": 0.7,
+          "predicted_yes": 12,
+          "predicted_no": 8,
+          "mean_p_correct": 0.8099843165604398,
+          "mean_margin_a_minus_b": -0.1578125,
+          "margin_sd": 6.503632068634033
+        },
+        {
+          "epoch": 20,
+          "mean_training_loss": 0.9477910131819953,
+          "balanced_accuracy": 0.85,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.7,
+          "predicted_yes": 13,
+          "predicted_no": 7,
+          "mean_p_correct": 0.8473477560095489,
+          "mean_margin_a_minus_b": 0.0390625,
+          "margin_sd": 7.012279987335205
+        },
+        {
+          "epoch": 25,
+          "mean_training_loss": 1.051646269773255,
+          "balanced_accuracy": 0.8,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.6,
+          "predicted_yes": 14,
+          "predicted_no": 6,
+          "mean_p_correct": 0.8006997611839324,
+          "mean_margin_a_minus_b": 0.3375,
+          "margin_sd": 6.830693244934082
+        },
+        {
+          "epoch": 30,
+          "mean_training_loss": 0.6528992570722949,
+          "balanced_accuracy": 0.85,
+          "yes_accuracy": 1.0,
+          "no_accuracy": 0.7,
+          "predicted_yes": 13,
+          "predicted_no": 7,
+          "mean_p_correct": 0.8504405310377479,
+          "mean_margin_a_minus_b": -0.25,
+          "margin_sd": 7.1918535232543945
+        }
+      ],
+      "final_metrics": {
+        "balanced_accuracy": 0.85,
+        "yes_accuracy": 1.0,
+        "no_accuracy": 0.7,
+        "predicted_yes": 13,
+        "predicted_no": 7,
+        "mean_p_correct": 0.8504405310377479,
+        "mean_margin_a_minus_b": -0.25,
+        "margin_sd": 7.1918535232543945
+      },
+      "raw_generation_smoke": [
+        {
+          "gold": "(a)",
+          "participant_id": "AIREADI-1048",
+          "window_start": 512,
+          "raw_generation": " The presence of a pacemaker"
+        },
+        {
+          "gold": "(b)",
+          "participant_id": "AIREADI-1024",
+          "window_start": 128,
+          "raw_generation": " b. The presence of a"
+        }
+      ]
+    }
+  }
+}
