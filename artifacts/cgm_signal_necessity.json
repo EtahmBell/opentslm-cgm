@@ -1,0 +1,2260 @@
+{
+  "experiment": "cgm_signal_necessity",
+  "stage5_repo": "OpenTSLM/llama-3.2-1b-ecg-sp",
+  "seed": 42,
+  "task": "above_180",
+  "normalization": {
+    "type": "fixed_global",
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711
+  },
+  "text_interface": {
+    "per_example_numeric_metadata": false,
+    "common_pre_prompt": "Analyze the continuous glucose monitor signal and answer the factual question.\n",
+    "common_time_series_text": "This is a continuous glucose monitor (CGM) signal measured in mg/dL. It contains 128 readings sampled approximately every 5 minutes. The numeric CGM signal was normalized using the same fixed training-set normalization for every segment: mean 142.143 mg/dL and standard deviation 37.232 mg/dL.",
+    "common_post_prompt": "\nQuestion: Did glucose exceed 180 mg/dL during this segment?\nAnswer Yes or No.\nAnswer:"
+  },
+  "train_per_class": 40,
+  "validation_per_class": 20,
+  "batch_size": 4,
+  "epochs": 15,
+  "best_epoch": 0,
+  "hyperparameters": {
+    "lr_t5_t6": 0.0002,
+    "lr_projector": 0.0001,
+    "lr_lora": 2e-05,
+    "sequence_weight": 1.0,
+    "pairwise_weight": 1.0,
+    "clip_t5_t6": 1.0,
+    "clip_projector": 1.0,
+    "clip_lora": 1.0
+  },
+  "participant_audit": {
+    "selected_train_participants": [
+      "AIREADI-1001",
+      "AIREADI-1004",
+      "AIREADI-1006",
+      "AIREADI-1008",
+      "AIREADI-1010",
+      "AIREADI-1011",
+      "AIREADI-1012",
+      "AIREADI-1015",
+      "AIREADI-1016",
+      "AIREADI-1018",
+      "AIREADI-1021",
+      "AIREADI-1023",
+      "AIREADI-1024",
+      "AIREADI-1025",
+      "AIREADI-1030",
+      "AIREADI-1031",
+      "AIREADI-1037",
+      "AIREADI-1040",
+      "AIREADI-1043",
+      "AIREADI-1044",
+      "AIREADI-1046",
+      "AIREADI-1048",
+      "AIREADI-1050"
+    ],
+    "selected_validation_participants": [
+      "AIREADI-1019",
+      "AIREADI-1026",
+      "AIREADI-1028",
+      "AIREADI-1034",
+      "AIREADI-1049"
+    ],
+    "overlap": [],
+    "test_participants_sealed": 6
+  },
+  "selected_train_examples": [
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 253.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 256.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 245.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 229.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 114.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 252.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 136.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 181.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 355.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 259.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 142.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 248.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 147.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 154.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 264.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 235.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 143.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 246.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 292.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 128.0
+    }
+  ],
+  "selected_validation_examples": [
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 221.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 217.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 230.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 133.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 123.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 264.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 198.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 177.0
+    }
+  ],
+  "first_gradient_audit": {
+    "t5_t6": 0.5430782418374088,
+    "projector": 4.123243306781908,
+    "lora": 65.38616333234705
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "mean_sequence_loss": null,
+      "mean_pairwise_loss": null,
+      "mean_total_loss": null,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.4969152435660362,
+          "margin_sd": 0.057643599808216095
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5007742077112198,
+          "margin_sd": 0.04186650738120079
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000000298023224,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.499225851893425,
+          "margin_sd": 0.04186650738120079
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.8774409227262367e-06,
+            "yes_no_centroid_cosine": 1.0000003576278687,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.3852975320769474e-06
+          },
+          "projector": {
+            "feature_sd": 1.1546072755663772e-06,
+            "yes_no_centroid_cosine": 0.9999990463256836,
+            "yes_no_centroid_l2_per_sqrt_dim": 8.359149887837702e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 1,
+      "mean_sequence_loss": 3.164955001324415,
+      "mean_pairwise_loss": 0.7962384819984436,
+      "mean_total_loss": 3.96119347512722,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.49949359903112056,
+          "margin_sd": 0.031318530440330505
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5001612352207303,
+          "margin_sd": 0.03556838631629944
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000000074505806,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.4998387757688761,
+          "margin_sd": 0.03556838631629944
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.8523496692068875e-06,
+            "yes_no_centroid_cosine": 0.9999993443489075,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.3542073651915416e-06
+          },
+          "projector": {
+            "feature_sd": 1.1284832908131648e-06,
+            "yes_no_centroid_cosine": 1.0000001192092896,
+            "yes_no_centroid_l2_per_sqrt_dim": 8.194123211069382e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "mean_sequence_loss": 0.21880357190966607,
+      "mean_pairwise_loss": 1.0933384835720061,
+      "mean_total_loss": 1.3121420443058014,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.500292494148016,
+          "margin_sd": 0.01844172365963459
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5018027946352959,
+          "margin_sd": 0.020201830193400383
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.4981972239911556,
+          "margin_sd": 0.020201830193400383
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.8384478153166128e-06,
+            "yes_no_centroid_cosine": 0.9999996423721313,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.3126977996289497e-06
+          },
+          "projector": {
+            "feature_sd": 1.109857294068206e-06,
+            "yes_no_centroid_cosine": 1.0000001192092896,
+            "yes_no_centroid_l2_per_sqrt_dim": 8.041717478590726e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "mean_sequence_loss": 0.21604504510760308,
+      "mean_pairwise_loss": 0.7198906481266022,
+      "mean_total_loss": 0.9359356909990311,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.5001182734966279,
+          "margin_sd": 0.015838325023651123
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.500094173103571,
+          "margin_sd": 0.014796758070588112
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000000298023224,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.499905826151371,
+          "margin_sd": 0.014796758070588112
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.8403422927804058e-06,
+            "yes_no_centroid_cosine": 0.9999993443489075,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.3810526929300977e-06
+          },
+          "projector": {
+            "feature_sd": 1.1144253448946984e-06,
+            "yes_no_centroid_cosine": 1.0000007152557373,
+            "yes_no_centroid_l2_per_sqrt_dim": 8.107784310595889e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 10,
+      "mean_sequence_loss": 0.18930169567465782,
+      "mean_pairwise_loss": 0.7354841768741608,
+      "mean_total_loss": 0.9247858762741089,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.500024177134037,
+          "margin_sd": 0.015322615392506123
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000958546996117,
+          "margin_sd": 0.012976688332855701
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000000298023224,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.49990414157509805,
+          "margin_sd": 0.012976688332855701
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.7304766970482888e-06,
+            "yes_no_centroid_cosine": 1.000000238418579,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.1573442811350105e-06
+          },
+          "projector": {
+            "feature_sd": 1.0330286386306398e-06,
+            "yes_no_centroid_cosine": 1.000000238418579,
+            "yes_no_centroid_l2_per_sqrt_dim": 7.530998686888779e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 15,
+      "mean_sequence_loss": 0.18926639929413797,
+      "mean_pairwise_loss": 0.7383340507745743,
+      "mean_total_loss": 0.9276004582643509,
+      "metrics": {
+        "train_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 80,
+          "mean_p_correct_original": 0.4999023247510195,
+          "margin_sd": 0.014194833114743233
+        },
+        "val_real": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5009756535291672,
+          "margin_sd": 0.01482317689806223
+        },
+        "val_zero": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.5000000149011612,
+          "margin_sd": 0.0
+        },
+        "val_shuffle": {
+          "balanced_accuracy_vs_original": 0.5,
+          "balanced_accuracy_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 40,
+          "mean_p_correct_original": 0.49902437925338744,
+          "margin_sd": 0.01482317689806223
+        },
+        "val_real_representation": {
+          "encoder": {
+            "feature_sd": 1.705268459772924e-06,
+            "yes_no_centroid_cosine": 1.000000238418579,
+            "yes_no_centroid_l2_per_sqrt_dim": 3.0996991426945897e-06
+          },
+          "projector": {
+            "feature_sd": 1.0196959010499995e-06,
+            "yes_no_centroid_cosine": 1.0000014305114746,
+            "yes_no_centroid_l2_per_sqrt_dim": 7.464009854629694e-07
+          }
+        }
+      }
+    }
+  ],
+  "final_pairwise": {
+    "train_real": {
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 80,
+      "mean_p_correct_original": 0.4969152435660362,
+      "margin_sd": 0.057643599808216095
+    },
+    "val_real": {
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 40,
+      "mean_p_correct_original": 0.5007742077112198,
+      "margin_sd": 0.04186650738120079
+    },
+    "val_zero": {
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 40,
+      "mean_p_correct_original": 0.5000000298023224,
+      "margin_sd": 0.0
+    },
+    "val_shuffle": {
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": 0.5,
+      "predicted_yes": 0,
+      "predicted_no": 40,
+      "mean_p_correct_original": 0.499225851893425,
+      "margin_sd": 0.04186650738120079
+    },
+    "val_real_representation": {
+      "encoder": {
+        "feature_sd": 1.8774409227262367e-06,
+        "yes_no_centroid_cosine": 1.0000003576278687,
+        "yes_no_centroid_l2_per_sqrt_dim": 3.3852975320769474e-06
+      },
+      "projector": {
+        "feature_sd": 1.1546072755663772e-06,
+        "yes_no_centroid_cosine": 0.9999990463256836,
+        "yes_no_centroid_l2_per_sqrt_dim": 8.359149887837702e-07
+      }
+    }
+  },
+  "final_generation": {
+    "real": {
+      "valid_rate": 1.0,
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": null,
+      "samples": [
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1664,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 256,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 896,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1536,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2304,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1152,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1792,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2688,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1026",
+          "window_start": 0,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1034",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 640,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1049",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "real",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2560,
+          "raw_generation": " No. The continuous"
+        }
+      ]
+    },
+    "zero": {
+      "valid_rate": 1.0,
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": null,
+      "samples": [
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1664,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 256,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 896,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1536,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2304,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1152,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1792,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2688,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1026",
+          "window_start": 0,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1034",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 640,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1049",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": null,
+          "prediction": false,
+          "signal_source": "zero",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2560,
+          "raw_generation": " No. The continuous"
+        }
+      ]
+    },
+    "shuffled_opposite": {
+      "valid_rate": 1.0,
+      "balanced_accuracy_vs_original": 0.5,
+      "balanced_accuracy_vs_donor": 0.5,
+      "samples": [
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1664,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 256,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 896,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1536,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 768,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2304,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1152,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 1280,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 2176,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 384,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 1792,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2688,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 2048,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1026",
+          "window_start": 0,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 128,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1034",
+          "window_start": 512,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1024,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1028",
+          "window_start": 1920,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 640,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": true,
+          "donor_is_yes": false,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1049",
+          "window_start": 2432,
+          "raw_generation": " No. The continuous"
+        },
+        {
+          "gold_is_yes": false,
+          "donor_is_yes": true,
+          "prediction": false,
+          "signal_source": "opposite_label_shuffle",
+          "participant_id": "AIREADI-1019",
+          "window_start": 2560,
+          "raw_generation": " No. The continuous"
+        }
+      ]
+    }
+  }
+}
