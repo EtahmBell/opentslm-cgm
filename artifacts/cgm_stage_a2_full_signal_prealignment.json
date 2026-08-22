@@ -1,0 +1,4226 @@
+{
+  "experiment": "cgm_stage_a2_full_signal_prealignment",
+  "model": {
+    "repo": "OpenTSLM/llama-3.2-1b-ecg-sp",
+    "base_llm": "meta-llama/Llama-3.2-1B",
+    "initialization": "original_public_stage5",
+    "tsqa_transplant": false,
+    "trainable": [
+      "original_stage5_t5",
+      "original_stage5_t6",
+      "original_stage5_projector"
+    ],
+    "frozen": [
+      "stage5_patch_and_early_encoder",
+      "stage5_t1_t4",
+      "base_llm",
+      "stage5_ecg_lora"
+    ]
+  },
+  "seed": 42,
+  "task": "above_180",
+  "normalization": {
+    "type": "fixed_global",
+    "mean": 142.14295959472656,
+    "std": 37.23153305053711
+  },
+  "data": {
+    "train_per_class": 231,
+    "validation_per_class": 49,
+    "train_total": 462,
+    "validation_total": 98,
+    "test_participants_sealed": 6
+  },
+  "training": {
+    "epochs": 20,
+    "effective_batch_size": 1,
+    "optimizer_updates_per_epoch": 462,
+    "total_optimizer_updates": 9240,
+    "loss": "true_pairwise_ab_only",
+    "lr_t5_t6": 0.0002,
+    "lr_projector": 0.0001,
+    "weight_decay": 0.01,
+    "clip_t5_t6": 1.0,
+    "clip_projector": 1.0
+  },
+  "participant_audit": {
+    "train_participants": [
+      "AIREADI-1001",
+      "AIREADI-1004",
+      "AIREADI-1006",
+      "AIREADI-1008",
+      "AIREADI-1010",
+      "AIREADI-1011",
+      "AIREADI-1012",
+      "AIREADI-1015",
+      "AIREADI-1016",
+      "AIREADI-1018",
+      "AIREADI-1021",
+      "AIREADI-1023",
+      "AIREADI-1024",
+      "AIREADI-1025",
+      "AIREADI-1030",
+      "AIREADI-1031",
+      "AIREADI-1037",
+      "AIREADI-1040",
+      "AIREADI-1043",
+      "AIREADI-1044",
+      "AIREADI-1046",
+      "AIREADI-1048",
+      "AIREADI-1050"
+    ],
+    "validation_participants": [
+      "AIREADI-1019",
+      "AIREADI-1026",
+      "AIREADI-1028",
+      "AIREADI-1034",
+      "AIREADI-1049"
+    ],
+    "overlap": []
+  },
+  "selected_train_examples": [
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 253.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 256.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 245.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 229.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 114.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 252.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 136.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 181.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 355.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 259.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 142.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 248.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 147.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 154.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 264.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 235.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 143.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 246.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 292.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 128.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 277.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 140.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 239.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 272.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 166.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 219.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 139.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 208.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 284.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 137.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 245.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 142.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 230.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 215.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 141.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 129.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 181.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 141.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 221.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 194.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 143.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 157.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 198.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 128.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 255.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 148.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 252.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 161.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 196.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 116.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 194.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 138.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 198.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 202.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 175.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 240.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 188.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 247.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 205.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 148.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 212.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 161.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 228.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 295.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 276.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 309.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 215.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 213.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 227.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 205.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 269.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 220.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 166.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 238.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 115.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 302.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 158.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 248.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 212.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 202.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 252.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 158.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 188.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 188.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 160.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 175.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 181.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 237.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 266.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 238.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 134.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 160.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 150.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 245.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 144.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 141.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 268.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 161.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 205.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 129.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 223.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 330.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 298.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 236.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 161.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 129.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 247.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 122.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 160.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 237.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 254.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 194.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 138.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 302.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 142.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 282.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 142.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 204.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 166.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 110.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 226.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 222.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 129.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 227.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 175.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 218.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 134.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 236.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 294.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 117.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 277.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 154.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1040",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 239.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 137.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 162.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 176.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 232.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 143.0
+    },
+    {
+      "participant_id": "AIREADI-1015",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 201.0
+    },
+    {
+      "participant_id": "AIREADI-1024",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 135.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 259.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 173.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 218.0
+    },
+    {
+      "participant_id": "AIREADI-1008",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 157.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 228.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 166.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 238.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 130.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 285.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 236.0
+    },
+    {
+      "participant_id": "AIREADI-1044",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 208.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 234.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 158.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 253.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 154.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 226.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 234.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1006",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 209.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 127.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 257.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 253.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1043",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 158.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 215.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 115.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 198.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 156.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 223.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1023",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 163.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 219.0
+    },
+    {
+      "participant_id": "AIREADI-1001",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 268.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 154.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 229.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 262.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 115.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 138.0
+    },
+    {
+      "participant_id": "AIREADI-1031",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 221.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 147.0
+    },
+    {
+      "participant_id": "AIREADI-1048",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 212.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 160.0
+    },
+    {
+      "participant_id": "AIREADI-1018",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 276.0
+    },
+    {
+      "participant_id": "AIREADI-1050",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 148.0
+    },
+    {
+      "participant_id": "AIREADI-1004",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 279.0
+    },
+    {
+      "participant_id": "AIREADI-1016",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 119.0
+    },
+    {
+      "participant_id": "AIREADI-1010",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1046",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1025",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 247.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1037",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 186.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 146.0
+    },
+    {
+      "participant_id": "AIREADI-1012",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 194.0
+    },
+    {
+      "participant_id": "AIREADI-1021",
+      "window_start": 2688,
+      "is_yes": false,
+      "window_max": 141.0
+    },
+    {
+      "participant_id": "AIREADI-1011",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1030",
+      "window_start": 256,
+      "is_yes": false,
+      "window_max": 153.0
+    }
+  ],
+  "selected_validation_examples": [
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 214.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 221.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1920,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 203.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 182.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 183.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 217.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 153.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 768,
+      "is_yes": true,
+      "window_max": 210.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 230.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 184.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 133.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 123.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1280,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 172.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2176,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 384,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 187.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 170.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2048,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 159.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 512,
+      "is_yes": true,
+      "window_max": 264.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 198.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 164.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 189.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 0,
+      "is_yes": true,
+      "window_max": 181.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 242.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1664,
+      "is_yes": false,
+      "window_max": 179.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2560,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 145.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 248.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 174.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 140.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 215.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 640,
+      "is_yes": false,
+      "window_max": 131.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1024,
+      "is_yes": true,
+      "window_max": 200.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 252.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 169.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2432,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 190.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 157.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2048,
+      "is_yes": true,
+      "window_max": 192.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 180.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 128,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 512,
+      "is_yes": false,
+      "window_max": 157.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 191.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1152,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 207.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 168.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 223.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 2560,
+      "is_yes": false,
+      "window_max": 167.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 256,
+      "is_yes": true,
+      "window_max": 205.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2304,
+      "is_yes": false,
+      "window_max": 179.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 384,
+      "is_yes": true,
+      "window_max": 238.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1152,
+      "is_yes": true,
+      "window_max": 206.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1024,
+      "is_yes": false,
+      "window_max": 151.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1664,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2176,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 2304,
+      "is_yes": true,
+      "window_max": 188.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 896,
+      "is_yes": false,
+      "window_max": 171.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1792,
+      "is_yes": true,
+      "window_max": 197.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 128,
+      "is_yes": false,
+      "window_max": 178.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 768,
+      "is_yes": false,
+      "window_max": 155.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 640,
+      "is_yes": true,
+      "window_max": 224.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 2432,
+      "is_yes": false,
+      "window_max": 165.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1408,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 152.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 216.0
+    },
+    {
+      "participant_id": "AIREADI-1019",
+      "window_start": 1536,
+      "is_yes": false,
+      "window_max": 131.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 2688,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 0,
+      "is_yes": false,
+      "window_max": 149.0
+    },
+    {
+      "participant_id": "AIREADI-1026",
+      "window_start": 1920,
+      "is_yes": true,
+      "window_max": 185.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1792,
+      "is_yes": false,
+      "window_max": 157.0
+    },
+    {
+      "participant_id": "AIREADI-1034",
+      "window_start": 1536,
+      "is_yes": true,
+      "window_max": 193.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1280,
+      "is_yes": false,
+      "window_max": 177.0
+    },
+    {
+      "participant_id": "AIREADI-1028",
+      "window_start": 896,
+      "is_yes": true,
+      "window_max": 195.0
+    },
+    {
+      "participant_id": "AIREADI-1049",
+      "window_start": 1408,
+      "is_yes": false,
+      "window_max": 148.0
+    }
+  ],
+  "first_gradient_audit": {
+    "gold": "YES",
+    "loss": 1.910224199295044,
+    "t5_t6": 0.09081310147472844,
+    "projector": 0.3361923748494003
+  },
+  "initial_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 462,
+      "mean_p_correct_original": 0.5001965930516069,
+      "margin_sd": 0.038313448429107666
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 462,
+      "mean_p_correct_original": 0.4980299166722215,
+      "margin_sd": 0.029242735356092453
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": 0.5,
+      "predicted_yes": 0,
+      "predicted_no": 462,
+      "mean_p_correct_original": 0.49970251718511827,
+      "margin_sd": 0.03809164837002754
+    },
+    "val_real": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 98,
+      "mean_p_correct_original": 0.4995417880768679,
+      "margin_sd": 0.03617159277200699
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 98,
+      "mean_p_correct_original": 0.497947991198423,
+      "margin_sd": 0.028096020221710205
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": 0.5,
+      "predicted_yes": 0,
+      "predicted_no": 98,
+      "mean_p_correct_original": 0.5005404640521322,
+      "margin_sd": 0.04087063670158386
+    },
+    "train_representation": {
+      "encoder": {
+        "feature_sd": 1.7798031421989435e-06,
+        "yes_no_cosine": 1.0,
+        "yes_no_l2_per_sqrt_dim": 2.3545296699012397e-06
+      },
+      "projector": {
+        "feature_sd": 1.0775693226605654e-06,
+        "yes_no_cosine": 0.9999990463256836,
+        "yes_no_l2_per_sqrt_dim": 5.838172114636109e-07
+      }
+    },
+    "val_representation": {
+      "encoder": {
+        "feature_sd": 1.8902001102105714e-06,
+        "yes_no_cosine": 1.000000238418579,
+        "yes_no_l2_per_sqrt_dim": 2.204527390858857e-06
+      },
+      "projector": {
+        "feature_sd": 1.159866087618866e-06,
+        "yes_no_cosine": 0.9999989867210388,
+        "yes_no_l2_per_sqrt_dim": 5.459455678646918e-07
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "mean_pairwise_loss": null,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462,
+          "mean_p_correct_original": 0.5001965930516069,
+          "margin_sd": 0.038313448429107666
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462,
+          "mean_p_correct_original": 0.4980299166722215,
+          "margin_sd": 0.029242735356092453
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 462,
+          "mean_p_correct_original": 0.49970251718511827,
+          "margin_sd": 0.03809164837002754
+        },
+        "val_real": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98,
+          "mean_p_correct_original": 0.4995417880768679,
+          "margin_sd": 0.03617159277200699
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98,
+          "mean_p_correct_original": 0.497947991198423,
+          "margin_sd": 0.028096020221710205
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 98,
+          "mean_p_correct_original": 0.5005404640521322,
+          "margin_sd": 0.04087063670158386
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 1.7798031421989435e-06,
+            "yes_no_cosine": 1.0,
+            "yes_no_l2_per_sqrt_dim": 2.3545296699012397e-06
+          },
+          "projector": {
+            "feature_sd": 1.0775693226605654e-06,
+            "yes_no_cosine": 0.9999990463256836,
+            "yes_no_l2_per_sqrt_dim": 5.838172114636109e-07
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 1.8902001102105714e-06,
+            "yes_no_cosine": 1.000000238418579,
+            "yes_no_l2_per_sqrt_dim": 2.204527390858857e-06
+          },
+          "projector": {
+            "feature_sd": 1.159866087618866e-06,
+            "yes_no_cosine": 0.9999989867210388,
+            "yes_no_l2_per_sqrt_dim": 5.459455678646918e-07
+          }
+        }
+      }
+    },
+    {
+      "epoch": 1,
+      "mean_pairwise_loss": 0.8100661895100786,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.7619047619047619,
+          "ba_vs_donor": null,
+          "predicted_yes": 191,
+          "predicted_no": 271,
+          "mean_p_correct_original": 0.6894560256434678,
+          "margin_sd": 2.806049108505249
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.4998626465318539,
+          "margin_sd": 0.021133093163371086
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.23809523809523808,
+          "ba_vs_donor": 0.7619047619047619,
+          "predicted_yes": 191,
+          "predicted_no": 271,
+          "mean_p_correct_original": 0.3104338127020061,
+          "margin_sd": 2.808406114578247
+        },
+        "val_real": {
+          "ba_vs_original": 0.5510204081632653,
+          "ba_vs_donor": null,
+          "predicted_yes": 25,
+          "predicted_no": 73,
+          "mean_p_correct_original": 0.5478325798390054,
+          "margin_sd": 2.4806711673736572
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.4998589652989592,
+          "margin_sd": 0.02228918857872486
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.4489795918367347,
+          "ba_vs_donor": 0.5510204081632653,
+          "predicted_yes": 25,
+          "predicted_no": 73,
+          "mean_p_correct_original": 0.45300680256154086,
+          "margin_sd": 2.4807827472686768
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.03843873739242554,
+            "yes_no_cosine": 0.3414308428764343,
+            "yes_no_l2_per_sqrt_dim": 0.10259763896465302
+          },
+          "projector": {
+            "feature_sd": 0.1486501544713974,
+            "yes_no_cosine": 0.3677099943161011,
+            "yes_no_l2_per_sqrt_dim": 0.20826973021030426
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.03391323238611221,
+            "yes_no_cosine": 0.9869700074195862,
+            "yes_no_l2_per_sqrt_dim": 0.026151016354560852
+          },
+          "projector": {
+            "feature_sd": 0.13146749138832092,
+            "yes_no_cosine": 0.9784350395202637,
+            "yes_no_l2_per_sqrt_dim": 0.044074852019548416
+          }
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "mean_pairwise_loss": 0.8273602334018474,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.7619047619047619,
+          "ba_vs_donor": null,
+          "predicted_yes": 211,
+          "predicted_no": 251,
+          "mean_p_correct_original": 0.7049237859245889,
+          "margin_sd": 2.6480984687805176
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.49971530802580183,
+          "margin_sd": 0.015641937032341957
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.2380952380952381,
+          "ba_vs_donor": 0.7619047619047619,
+          "predicted_yes": 211,
+          "predicted_no": 251,
+          "mean_p_correct_original": 0.29466483737765387,
+          "margin_sd": 2.654839038848877
+        },
+        "val_real": {
+          "ba_vs_original": 0.6122448979591837,
+          "ba_vs_donor": null,
+          "predicted_yes": 41,
+          "predicted_no": 57,
+          "mean_p_correct_original": 0.5840893769066553,
+          "margin_sd": 2.476313829421997
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.4997027814578341,
+          "margin_sd": 0.018043145537376404
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.3877551020408163,
+          "ba_vs_donor": 0.6122448979591837,
+          "predicted_yes": 41,
+          "predicted_no": 57,
+          "mean_p_correct_original": 0.41532308509459304,
+          "margin_sd": 2.4732275009155273
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.04091869294643402,
+            "yes_no_cosine": 0.0914062112569809,
+            "yes_no_l2_per_sqrt_dim": 0.12671485543251038
+          },
+          "projector": {
+            "feature_sd": 0.154579758644104,
+            "yes_no_cosine": 0.28250983357429504,
+            "yes_no_l2_per_sqrt_dim": 0.22114984691143036
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.04028819501399994,
+            "yes_no_cosine": 0.9152919054031372,
+            "yes_no_l2_per_sqrt_dim": 0.054820094257593155
+          },
+          "projector": {
+            "feature_sd": 0.15356001257896423,
+            "yes_no_cosine": 0.8147894740104675,
+            "yes_no_l2_per_sqrt_dim": 0.09703239798545837
+          }
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "mean_pairwise_loss": 0.8384805793853304,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.7900432900432901,
+          "ba_vs_donor": null,
+          "predicted_yes": 280,
+          "predicted_no": 182,
+          "mean_p_correct_original": 0.737483623792373,
+          "margin_sd": 3.097813844680786
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.5000271758334751,
+          "margin_sd": 0.012152638286352158
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.20995670995670995,
+          "ba_vs_donor": 0.7900432900432901,
+          "predicted_yes": 280,
+          "predicted_no": 182,
+          "mean_p_correct_original": 0.26302781756221444,
+          "margin_sd": 3.0968055725097656
+        },
+        "val_real": {
+          "ba_vs_original": 0.6224489795918366,
+          "ba_vs_donor": null,
+          "predicted_yes": 62,
+          "predicted_no": 36,
+          "mean_p_correct_original": 0.6004660951486808,
+          "margin_sd": 2.973982810974121
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.500025141585086,
+          "margin_sd": 0.012240908108651638
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.37755102040816324,
+          "ba_vs_donor": 0.6224489795918366,
+          "predicted_yes": 62,
+          "predicted_no": 36,
+          "mean_p_correct_original": 0.3998603136183656,
+          "margin_sd": 2.975537061691284
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.04091322049498558,
+            "yes_no_cosine": -0.24009162187576294,
+            "yes_no_l2_per_sqrt_dim": 0.15368539094924927
+          },
+          "projector": {
+            "feature_sd": 0.14487090706825256,
+            "yes_no_cosine": 0.3693925738334656,
+            "yes_no_l2_per_sqrt_dim": 0.22205622494220734
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.04002980515360832,
+            "yes_no_cosine": 0.6742984652519226,
+            "yes_no_l2_per_sqrt_dim": 0.05267304554581642
+          },
+          "projector": {
+            "feature_sd": 0.14394505321979523,
+            "yes_no_cosine": 0.9078302383422852,
+            "yes_no_l2_per_sqrt_dim": 0.08256146311759949
+          }
+        }
+      }
+    },
+    {
+      "epoch": 10,
+      "mean_pairwise_loss": 0.7899144978763423,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.7987012987012987,
+          "ba_vs_donor": null,
+          "predicted_yes": 262,
+          "predicted_no": 200,
+          "mean_p_correct_original": 0.7550404740979259,
+          "margin_sd": 3.103644371032715
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.4999346064597175,
+          "margin_sd": 0.01585838571190834
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.2012987012987013,
+          "ba_vs_donor": 0.7987012987012987,
+          "predicted_yes": 262,
+          "predicted_no": 200,
+          "mean_p_correct_original": 0.24520084954640986,
+          "margin_sd": 3.099282741546631
+        },
+        "val_real": {
+          "ba_vs_original": 0.6530612244897959,
+          "ba_vs_donor": null,
+          "predicted_yes": 59,
+          "predicted_no": 39,
+          "mean_p_correct_original": 0.6286209644797277,
+          "margin_sd": 2.78328275680542
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.49993677827890737,
+          "margin_sd": 0.014048010110855103
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.3469387755102041,
+          "ba_vs_donor": 0.6530612244897959,
+          "predicted_yes": 59,
+          "predicted_no": 39,
+          "mean_p_correct_original": 0.37169572602653383,
+          "margin_sd": 2.7817037105560303
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.038750454783439636,
+            "yes_no_cosine": 0.2341909408569336,
+            "yes_no_l2_per_sqrt_dim": 0.16338157653808594
+          },
+          "projector": {
+            "feature_sd": 0.1589912325143814,
+            "yes_no_cosine": 0.31721508502960205,
+            "yes_no_l2_per_sqrt_dim": 0.24948425590991974
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.03878236934542656,
+            "yes_no_cosine": 0.7727685570716858,
+            "yes_no_l2_per_sqrt_dim": 0.07910891622304916
+          },
+          "projector": {
+            "feature_sd": 0.16254672408103943,
+            "yes_no_cosine": 0.8332629203796387,
+            "yes_no_l2_per_sqrt_dim": 0.1313195526599884
+          }
+        }
+      }
+    },
+    {
+      "epoch": 15,
+      "mean_pairwise_loss": 0.6700099902527379,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.7987012987012987,
+          "ba_vs_donor": null,
+          "predicted_yes": 258,
+          "predicted_no": 204,
+          "mean_p_correct_original": 0.7546793906243913,
+          "margin_sd": 2.672274112701416
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.4998020778220647,
+          "margin_sd": 0.013950401917099953
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.20129870129870128,
+          "ba_vs_donor": 0.7987012987012987,
+          "predicted_yes": 258,
+          "predicted_no": 204,
+          "mean_p_correct_original": 0.2452722777294003,
+          "margin_sd": 2.6746647357940674
+        },
+        "val_real": {
+          "ba_vs_original": 0.6428571428571428,
+          "ba_vs_donor": null,
+          "predicted_yes": 56,
+          "predicted_no": 42,
+          "mean_p_correct_original": 0.6216826291602789,
+          "margin_sd": 2.50907564163208
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.49978700685029737,
+          "margin_sd": 0.01423326600342989
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.3571428571428571,
+          "ba_vs_donor": 0.6428571428571428,
+          "predicted_yes": 56,
+          "predicted_no": 42,
+          "mean_p_correct_original": 0.37857708057426676,
+          "margin_sd": 2.5150856971740723
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.03307747468352318,
+            "yes_no_cosine": 0.6366923451423645,
+            "yes_no_l2_per_sqrt_dim": 0.11105050146579742
+          },
+          "projector": {
+            "feature_sd": 0.12434349954128265,
+            "yes_no_cosine": 0.27471715211868286,
+            "yes_no_l2_per_sqrt_dim": 0.198883056640625
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.03332499414682388,
+            "yes_no_cosine": 0.8934406638145447,
+            "yes_no_l2_per_sqrt_dim": 0.05871940776705742
+          },
+          "projector": {
+            "feature_sd": 0.12263073027133942,
+            "yes_no_cosine": 0.7780148983001709,
+            "yes_no_l2_per_sqrt_dim": 0.09646812826395035
+          }
+        }
+      }
+    },
+    {
+      "epoch": 20,
+      "mean_pairwise_loss": 0.6367490996407079,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.803030303030303,
+          "ba_vs_donor": null,
+          "predicted_yes": 262,
+          "predicted_no": 200,
+          "mean_p_correct_original": 0.7953857463468027,
+          "margin_sd": 4.177074909210205
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.500056872110072,
+          "margin_sd": 0.017550736665725708
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.19696969696969696,
+          "ba_vs_donor": 0.803030303030303,
+          "predicted_yes": 262,
+          "predicted_no": 200,
+          "mean_p_correct_original": 0.204569495326408,
+          "margin_sd": 4.180281162261963
+        },
+        "val_real": {
+          "ba_vs_original": 0.673469387755102,
+          "ba_vs_donor": null,
+          "predicted_yes": 57,
+          "predicted_no": 41,
+          "mean_p_correct_original": 0.6606400939825998,
+          "margin_sd": 3.7281668186187744
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0,
+          "mean_p_correct_original": 0.5000562052793649,
+          "margin_sd": 0.01705756038427353
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.326530612244898,
+          "ba_vs_donor": 0.673469387755102,
+          "predicted_yes": 57,
+          "predicted_no": 41,
+          "mean_p_correct_original": 0.33940774485069725,
+          "margin_sd": 3.7317843437194824
+        },
+        "train_representation": {
+          "encoder": {
+            "feature_sd": 0.03289235010743141,
+            "yes_no_cosine": 0.6629649996757507,
+            "yes_no_l2_per_sqrt_dim": 0.08397115021944046
+          },
+          "projector": {
+            "feature_sd": 0.1286376267671585,
+            "yes_no_cosine": 0.8144145607948303,
+            "yes_no_l2_per_sqrt_dim": 0.20368660986423492
+          }
+        },
+        "val_representation": {
+          "encoder": {
+            "feature_sd": 0.03838688135147095,
+            "yes_no_cosine": 0.8694605827331543,
+            "yes_no_l2_per_sqrt_dim": 0.04332808777689934
+          },
+          "projector": {
+            "feature_sd": 0.14220577478408813,
+            "yes_no_cosine": 0.9519514441490173,
+            "yes_no_l2_per_sqrt_dim": 0.1146872416138649
+          }
+        }
+      }
+    }
+  ],
+  "final_epoch_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.803030303030303,
+      "ba_vs_donor": null,
+      "predicted_yes": 262,
+      "predicted_no": 200,
+      "mean_p_correct_original": 0.7953857463468027,
+      "margin_sd": 4.177074909210205
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 462,
+      "predicted_no": 0,
+      "mean_p_correct_original": 0.500056872110072,
+      "margin_sd": 0.017550736665725708
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.19696969696969696,
+      "ba_vs_donor": 0.803030303030303,
+      "predicted_yes": 262,
+      "predicted_no": 200,
+      "mean_p_correct_original": 0.204569495326408,
+      "margin_sd": 4.180281162261963
+    },
+    "val_real": {
+      "ba_vs_original": 0.673469387755102,
+      "ba_vs_donor": null,
+      "predicted_yes": 57,
+      "predicted_no": 41,
+      "mean_p_correct_original": 0.6606400939825998,
+      "margin_sd": 3.7281668186187744
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 98,
+      "predicted_no": 0,
+      "mean_p_correct_original": 0.5000562052793649,
+      "margin_sd": 0.01705756038427353
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.326530612244898,
+      "ba_vs_donor": 0.673469387755102,
+      "predicted_yes": 57,
+      "predicted_no": 41,
+      "mean_p_correct_original": 0.33940774485069725,
+      "margin_sd": 3.7317843437194824
+    },
+    "train_representation": {
+      "encoder": {
+        "feature_sd": 0.03289235010743141,
+        "yes_no_cosine": 0.6629649996757507,
+        "yes_no_l2_per_sqrt_dim": 0.08397115021944046
+      },
+      "projector": {
+        "feature_sd": 0.1286376267671585,
+        "yes_no_cosine": 0.8144145607948303,
+        "yes_no_l2_per_sqrt_dim": 0.20368660986423492
+      }
+    },
+    "val_representation": {
+      "encoder": {
+        "feature_sd": 0.03838688135147095,
+        "yes_no_cosine": 0.8694605827331543,
+        "yes_no_l2_per_sqrt_dim": 0.04332808777689934
+      },
+      "projector": {
+        "feature_sd": 0.14220577478408813,
+        "yes_no_cosine": 0.9519514441490173,
+        "yes_no_l2_per_sqrt_dim": 0.1146872416138649
+      }
+    }
+  },
+  "best_epoch": 20,
+  "best_validation_real_ba": 0.673469387755102,
+  "best_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.803030303030303,
+      "ba_vs_donor": null,
+      "predicted_yes": 262,
+      "predicted_no": 200,
+      "mean_p_correct_original": 0.7953857463468027,
+      "margin_sd": 4.177074909210205
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 462,
+      "predicted_no": 0,
+      "mean_p_correct_original": 0.500056872110072,
+      "margin_sd": 0.017550736665725708
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.19696969696969696,
+      "ba_vs_donor": 0.803030303030303,
+      "predicted_yes": 262,
+      "predicted_no": 200,
+      "mean_p_correct_original": 0.204569495326408,
+      "margin_sd": 4.180281162261963
+    },
+    "val_real": {
+      "ba_vs_original": 0.673469387755102,
+      "ba_vs_donor": null,
+      "predicted_yes": 57,
+      "predicted_no": 41,
+      "mean_p_correct_original": 0.6606400939825998,
+      "margin_sd": 3.7281668186187744
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 98,
+      "predicted_no": 0,
+      "mean_p_correct_original": 0.5000562052793649,
+      "margin_sd": 0.01705756038427353
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.326530612244898,
+      "ba_vs_donor": 0.673469387755102,
+      "predicted_yes": 57,
+      "predicted_no": 41,
+      "mean_p_correct_original": 0.33940774485069725,
+      "margin_sd": 3.7317843437194824
+    },
+    "train_representation": {
+      "encoder": {
+        "feature_sd": 0.03289235010743141,
+        "yes_no_cosine": 0.6629649996757507,
+        "yes_no_l2_per_sqrt_dim": 0.08397115021944046
+      },
+      "projector": {
+        "feature_sd": 0.1286376267671585,
+        "yes_no_cosine": 0.8144145607948303,
+        "yes_no_l2_per_sqrt_dim": 0.20368660986423492
+      }
+    },
+    "val_representation": {
+      "encoder": {
+        "feature_sd": 0.03838688135147095,
+        "yes_no_cosine": 0.8694605827331543,
+        "yes_no_l2_per_sqrt_dim": 0.04332808777689934
+      },
+      "projector": {
+        "feature_sd": 0.14220577478408813,
+        "yes_no_cosine": 0.9519514441490173,
+        "yes_no_l2_per_sqrt_dim": 0.1146872416138649
+      }
+    }
+  },
+  "stage_a_success": false,
+  "checkpoint_saved": true,
+  "checkpoint_path": "C:\\tslm\\opentslm-cgm\\checkpoints\\cgm_stage_a2_above180_best.pt"
+}
