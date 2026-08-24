@@ -1,0 +1,251 @@
+{
+  "experiment": "cgm_stage_a2_continue_to40",
+  "base_repo": "OpenTSLM/llama-3.2-1b-ecg-sp",
+  "tsqa_transplant": false,
+  "base_epoch": 20,
+  "target_epoch": 40,
+  "optimizer_reset_at_epoch20": true,
+  "note": "Epoch-20 checkpoint did not include AdamW optimizer moments; continuation therefore warm-started model weights with a fresh optimizer.",
+  "training": {
+    "train_total": 462,
+    "validation_total": 98,
+    "updates_per_epoch": 462,
+    "additional_epochs": 20,
+    "lr_t5_t6": 0.0002,
+    "lr_projector": 0.0001,
+    "batch_size": 1
+  },
+  "loaded_epoch20_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.803030303030303,
+      "ba_vs_donor": null
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.19696969696969696,
+      "ba_vs_donor": 0.803030303030303
+    },
+    "val_real": {
+      "ba_vs_original": 0.673469387755102,
+      "ba_vs_donor": null
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.326530612244898,
+      "ba_vs_donor": 0.673469387755102
+    }
+  },
+  "history": [
+    {
+      "epoch": 20,
+      "mean_loss": null,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.803030303030303,
+          "ba_vs_donor": null
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.19696969696969696,
+          "ba_vs_donor": 0.803030303030303
+        },
+        "val_real": {
+          "ba_vs_original": 0.673469387755102,
+          "ba_vs_donor": null
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.326530612244898,
+          "ba_vs_donor": 0.673469387755102
+        }
+      }
+    },
+    {
+      "epoch": 25,
+      "mean_loss": 0.7758104799666091,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8138528138528138,
+          "ba_vs_donor": null
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.18614718614718617,
+          "ba_vs_donor": 0.8138528138528138
+        },
+        "val_real": {
+          "ba_vs_original": 0.6938775510204082,
+          "ba_vs_donor": null
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.30612244897959184,
+          "ba_vs_donor": 0.6938775510204082
+        }
+      }
+    },
+    {
+      "epoch": 30,
+      "mean_loss": 0.7075184177571012,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8073593073593073,
+          "ba_vs_donor": null
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.19264069264069264,
+          "ba_vs_donor": 0.8073593073593073
+        },
+        "val_real": {
+          "ba_vs_original": 0.653061224489796,
+          "ba_vs_donor": null
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.3469387755102041,
+          "ba_vs_donor": 0.653061224489796
+        }
+      }
+    },
+    {
+      "epoch": 35,
+      "mean_loss": 0.6153933618447514,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.800865800865801,
+          "ba_vs_donor": null
+        },
+        "train_zero": {
+          "ba_vs_original": 0.015151515151515152,
+          "ba_vs_donor": null
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.2012987012987013,
+          "ba_vs_donor": 0.7987012987012987
+        },
+        "val_real": {
+          "ba_vs_original": 0.6224489795918366,
+          "ba_vs_donor": null
+        },
+        "val_zero": {
+          "ba_vs_original": 0.01020408163265306,
+          "ba_vs_donor": null
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.37755102040816324,
+          "ba_vs_donor": 0.6224489795918366
+        }
+      }
+    },
+    {
+      "epoch": 40,
+      "mean_loss": 0.6135073161212268,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8246753246753247,
+          "ba_vs_donor": null
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.17532467532467533,
+          "ba_vs_donor": 0.8246753246753247
+        },
+        "val_real": {
+          "ba_vs_original": 0.6530612244897959,
+          "ba_vs_donor": null
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.346938775510204,
+          "ba_vs_donor": 0.6530612244897959
+        }
+      }
+    }
+  ],
+  "best_epoch": 25,
+  "best_validation_real_ba": 0.6938775510204082,
+  "best_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.8138528138528138,
+      "ba_vs_donor": null
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.18614718614718617,
+      "ba_vs_donor": 0.8138528138528138
+    },
+    "val_real": {
+      "ba_vs_original": 0.6938775510204082,
+      "ba_vs_donor": null
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.30612244897959184,
+      "ba_vs_donor": 0.6938775510204082
+    }
+  },
+  "epoch40_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.8246753246753247,
+      "ba_vs_donor": null
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.17532467532467533,
+      "ba_vs_donor": 0.8246753246753247
+    },
+    "val_real": {
+      "ba_vs_original": 0.6530612244897959,
+      "ba_vs_donor": null
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.346938775510204,
+      "ba_vs_donor": 0.6530612244897959
+    }
+  },
+  "test_participants_sealed": 6
+}
