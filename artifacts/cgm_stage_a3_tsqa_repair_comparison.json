@@ -1,0 +1,973 @@
+{
+  "experiment": "cgm_stage_a3_tsqa_repair_comparison",
+  "reference": {
+    "original_stage5_epoch20_ba": 0.673,
+    "original_stage5_exploratory_best_ba": 0.694
+  },
+  "architecture": {
+    "base_model": "OpenTSLM/llama-3.2-1b-ecg-sp",
+    "tsqa_donor": "OpenTSLM/llama-3.2-1b-tsqa-sp",
+    "tsqa_llm_used": false,
+    "stage5_llm_frozen": true,
+    "stage5_lora_frozen": true
+  },
+  "data": {
+    "train_total": 462,
+    "validation_total": 98,
+    "test_participants_sealed": 6
+  },
+  "results": {
+    "tsqa_t56_tsqaproj": {
+      "arm": "tsqa_t56_tsqaproj",
+      "projector_source": "TSQA",
+      "best_epoch": 20,
+      "best_validation_real_ba": 0.7448979591836735,
+      "delta_vs_original_epoch20": 0.07189795918367348,
+      "delta_vs_original_exploratory_best": 0.05089795918367357,
+      "initial": {
+        "train_real": {
+          "ba_vs_original": 0.5606060606060607,
+          "ba_vs_donor": null,
+          "predicted_yes": 406,
+          "predicted_no": 56
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 462,
+          "predicted_no": 0
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.43939393939393945,
+          "ba_vs_donor": 0.5606060606060607,
+          "predicted_yes": 406,
+          "predicted_no": 56
+        },
+        "val_real": {
+          "ba_vs_original": 0.5204081632653061,
+          "ba_vs_donor": null,
+          "predicted_yes": 86,
+          "predicted_no": 12
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.45918367346938777,
+          "ba_vs_donor": 0.5408163265306123,
+          "predicted_yes": 86,
+          "predicted_no": 12
+        }
+      },
+      "initial_representation": {
+        "encoder": {
+          "feature_sd": 0.21170610189437866,
+          "yes_no_cosine": 0.9916777610778809
+        },
+        "projector": {
+          "feature_sd": 0.05897944048047066,
+          "yes_no_cosine": 0.9835290908813477
+        }
+      },
+      "first_gradient": {
+        "t5_t6": 3.8533341065416336,
+        "projector": 8.79473515503064,
+        "loss": 0.3304581940174103
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "mean_loss": null,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.5606060606060607,
+              "ba_vs_donor": null,
+              "predicted_yes": 406,
+              "predicted_no": 56
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.43939393939393945,
+              "ba_vs_donor": 0.5606060606060607,
+              "predicted_yes": 406,
+              "predicted_no": 56
+            },
+            "val_real": {
+              "ba_vs_original": 0.5204081632653061,
+              "ba_vs_donor": null,
+              "predicted_yes": 86,
+              "predicted_no": 12
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.45918367346938777,
+              "ba_vs_donor": 0.5408163265306123,
+              "predicted_yes": 86,
+              "predicted_no": 12
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.21170610189437866,
+              "yes_no_cosine": 0.9916777610778809
+            },
+            "projector": {
+              "feature_sd": 0.05897944048047066,
+              "yes_no_cosine": 0.9835290908813477
+            }
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_loss": 0.8701252214219628,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.7835497835497836,
+              "ba_vs_donor": null,
+              "predicted_yes": 237,
+              "predicted_no": 225
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.21645021645021645,
+              "ba_vs_donor": 0.7835497835497836,
+              "predicted_yes": 237,
+              "predicted_no": 225
+            },
+            "val_real": {
+              "ba_vs_original": 0.6224489795918366,
+              "ba_vs_donor": null,
+              "predicted_yes": 46,
+              "predicted_no": 52
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.37755102040816324,
+              "ba_vs_donor": 0.6224489795918366,
+              "predicted_yes": 46,
+              "predicted_no": 52
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.3075903058052063,
+              "yes_no_cosine": 0.9343590140342712
+            },
+            "projector": {
+              "feature_sd": 0.22780480980873108,
+              "yes_no_cosine": 0.9550455808639526
+            }
+          }
+        },
+        {
+          "epoch": 2,
+          "mean_loss": 0.8187137630641373,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.7813852813852813,
+              "ba_vs_donor": null,
+              "predicted_yes": 308,
+              "predicted_no": 154
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.21645021645021645,
+              "ba_vs_donor": 0.7835497835497836,
+              "predicted_yes": 309,
+              "predicted_no": 153
+            },
+            "val_real": {
+              "ba_vs_original": 0.5816326530612245,
+              "ba_vs_donor": null,
+              "predicted_yes": 74,
+              "predicted_no": 24
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.4183673469387755,
+              "ba_vs_donor": 0.5816326530612245,
+              "predicted_yes": 74,
+              "predicted_no": 24
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.4692613482475281,
+              "yes_no_cosine": 0.7087656855583191
+            },
+            "projector": {
+              "feature_sd": 0.34694305062294006,
+              "yes_no_cosine": 0.9565856456756592
+            }
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_loss": 0.904514135305882,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8051948051948052,
+              "ba_vs_donor": null,
+              "predicted_yes": 259,
+              "predicted_no": 203
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.19480519480519481,
+              "ba_vs_donor": 0.8051948051948052,
+              "predicted_yes": 259,
+              "predicted_no": 203
+            },
+            "val_real": {
+              "ba_vs_original": 0.653061224489796,
+              "ba_vs_donor": null,
+              "predicted_yes": 57,
+              "predicted_no": 41
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.3469387755102041,
+              "ba_vs_donor": 0.653061224489796,
+              "predicted_yes": 57,
+              "predicted_no": 41
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.2934400141239166,
+              "yes_no_cosine": 0.9764252305030823
+            },
+            "projector": {
+              "feature_sd": 0.08511506021022797,
+              "yes_no_cosine": 0.9319986701011658
+            }
+          }
+        },
+        {
+          "epoch": 10,
+          "mean_loss": 0.6427248234173194,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8593073593073594,
+              "ba_vs_donor": null,
+              "predicted_yes": 212,
+              "predicted_no": 250
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.1406926406926407,
+              "ba_vs_donor": 0.8593073593073594,
+              "predicted_yes": 212,
+              "predicted_no": 250
+            },
+            "val_real": {
+              "ba_vs_original": 0.7142857142857142,
+              "ba_vs_donor": null,
+              "predicted_yes": 35,
+              "predicted_no": 63
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.2857142857142857,
+              "ba_vs_donor": 0.7142857142857142,
+              "predicted_yes": 35,
+              "predicted_no": 63
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.41012686491012573,
+              "yes_no_cosine": 0.7707372307777405
+            },
+            "projector": {
+              "feature_sd": 0.3020648956298828,
+              "yes_no_cosine": 0.827851414680481
+            }
+          }
+        },
+        {
+          "epoch": 15,
+          "mean_loss": 0.5468099883662283,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8354978354978355,
+              "ba_vs_donor": null,
+              "predicted_yes": 231,
+              "predicted_no": 231
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.16233766233766234,
+              "ba_vs_donor": 0.8376623376623377,
+              "predicted_yes": 232,
+              "predicted_no": 230
+            },
+            "val_real": {
+              "ba_vs_original": 0.6632653061224489,
+              "ba_vs_donor": null,
+              "predicted_yes": 40,
+              "predicted_no": 58
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.336734693877551,
+              "ba_vs_donor": 0.6632653061224489,
+              "predicted_yes": 40,
+              "predicted_no": 58
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.4698033332824707,
+              "yes_no_cosine": 0.7895152568817139
+            },
+            "projector": {
+              "feature_sd": 0.35195380449295044,
+              "yes_no_cosine": 0.6611699461936951
+            }
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_loss": 0.5304470435937704,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8744588744588745,
+              "ba_vs_donor": null,
+              "predicted_yes": 255,
+              "predicted_no": 207
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.12554112554112556,
+              "ba_vs_donor": 0.8744588744588745,
+              "predicted_yes": 255,
+              "predicted_no": 207
+            },
+            "val_real": {
+              "ba_vs_original": 0.7448979591836735,
+              "ba_vs_donor": null,
+              "predicted_yes": 56,
+              "predicted_no": 42
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.24489795918367346,
+              "ba_vs_donor": 0.7551020408163265,
+              "predicted_yes": 57,
+              "predicted_no": 41
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.4912120997905731,
+              "yes_no_cosine": 0.6631988286972046
+            },
+            "projector": {
+              "feature_sd": 0.4664778411388397,
+              "yes_no_cosine": 0.5745735764503479
+            }
+          }
+        }
+      ],
+      "best_metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8744588744588745,
+          "ba_vs_donor": null,
+          "predicted_yes": 255,
+          "predicted_no": 207
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.12554112554112556,
+          "ba_vs_donor": 0.8744588744588745,
+          "predicted_yes": 255,
+          "predicted_no": 207
+        },
+        "val_real": {
+          "ba_vs_original": 0.7448979591836735,
+          "ba_vs_donor": null,
+          "predicted_yes": 56,
+          "predicted_no": 42
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.24489795918367346,
+          "ba_vs_donor": 0.7551020408163265,
+          "predicted_yes": 57,
+          "predicted_no": 41
+        }
+      },
+      "best_representation": {
+        "encoder": {
+          "feature_sd": 0.4912120997905731,
+          "yes_no_cosine": 0.6631988286972046
+        },
+        "projector": {
+          "feature_sd": 0.4664778411388397,
+          "yes_no_cosine": 0.5745735764503479
+        }
+      },
+      "checkpoint": "C:\\tslm\\opentslm-cgm\\checkpoints\\cgm_stage_a3_tsqa_t56_tsqaproj_best.pt"
+    },
+    "tsqa_t56_s5proj": {
+      "arm": "tsqa_t56_s5proj",
+      "projector_source": "Stage5",
+      "best_epoch": 20,
+      "best_validation_real_ba": 0.7755102040816326,
+      "delta_vs_original_epoch20": 0.10251020408163258,
+      "delta_vs_original_exploratory_best": 0.08151020408163268,
+      "initial": {
+        "train_real": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 462
+        },
+        "val_real": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": 0.5,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        }
+      },
+      "initial_representation": {
+        "encoder": {
+          "feature_sd": 0.21170610189437866,
+          "yes_no_cosine": 0.9916777610778809
+        },
+        "projector": {
+          "feature_sd": 0.010585092008113861,
+          "yes_no_cosine": 0.9984999895095825
+        }
+      },
+      "first_gradient": {
+        "t5_t6": 0.15606714061068236,
+        "projector": 0.7353763743104278,
+        "loss": 1.9637140035629272
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "mean_loss": null,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": 0.5,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "val_real": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": 0.5,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.21170610189437866,
+              "yes_no_cosine": 0.9916777610778809
+            },
+            "projector": {
+              "feature_sd": 0.010585092008113861,
+              "yes_no_cosine": 0.9984999895095825
+            }
+          }
+        },
+        {
+          "epoch": 1,
+          "mean_loss": 0.9086328350206347,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.7597402597402597,
+              "ba_vs_donor": null,
+              "predicted_yes": 180,
+              "predicted_no": 282
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.24025974025974026,
+              "ba_vs_donor": 0.7597402597402597,
+              "predicted_yes": 180,
+              "predicted_no": 282
+            },
+            "val_real": {
+              "ba_vs_original": 0.5816326530612245,
+              "ba_vs_donor": null,
+              "predicted_yes": 20,
+              "predicted_no": 78
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.41836734693877553,
+              "ba_vs_donor": 0.5816326530612245,
+              "predicted_yes": 20,
+              "predicted_no": 78
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.42061978578567505,
+              "yes_no_cosine": 0.8605668544769287
+            },
+            "projector": {
+              "feature_sd": 0.03807073086500168,
+              "yes_no_cosine": 0.9854350686073303
+            }
+          }
+        },
+        {
+          "epoch": 2,
+          "mean_loss": 0.9994095837652283,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.7532467532467533,
+              "ba_vs_donor": null,
+              "predicted_yes": 159,
+              "predicted_no": 303
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.24675324675324678,
+              "ba_vs_donor": 0.7532467532467533,
+              "predicted_yes": 159,
+              "predicted_no": 303
+            },
+            "val_real": {
+              "ba_vs_original": 0.5816326530612245,
+              "ba_vs_donor": null,
+              "predicted_yes": 18,
+              "predicted_no": 80
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.41836734693877553,
+              "ba_vs_donor": 0.5816326530612245,
+              "predicted_yes": 18,
+              "predicted_no": 80
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.3966442346572876,
+              "yes_no_cosine": 0.9766865968704224
+            },
+            "projector": {
+              "feature_sd": 0.036077115684747696,
+              "yes_no_cosine": 0.990145206451416
+            }
+          }
+        },
+        {
+          "epoch": 5,
+          "mean_loss": 0.8041065855573377,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.7943722943722944,
+              "ba_vs_donor": null,
+              "predicted_yes": 182,
+              "predicted_no": 280
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.20562770562770563,
+              "ba_vs_donor": 0.7943722943722944,
+              "predicted_yes": 182,
+              "predicted_no": 280
+            },
+            "val_real": {
+              "ba_vs_original": 0.6122448979591837,
+              "ba_vs_donor": null,
+              "predicted_yes": 27,
+              "predicted_no": 71
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.3877551020408163,
+              "ba_vs_donor": 0.6122448979591837,
+              "predicted_yes": 27,
+              "predicted_no": 71
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.3868756592273712,
+              "yes_no_cosine": 0.9629561901092529
+            },
+            "projector": {
+              "feature_sd": 0.0313166007399559,
+              "yes_no_cosine": 0.9858628511428833
+            }
+          }
+        },
+        {
+          "epoch": 10,
+          "mean_loss": 0.685292470003569,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8463203463203464,
+              "ba_vs_donor": null,
+              "predicted_yes": 228,
+              "predicted_no": 234
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.15584415584415584,
+              "ba_vs_donor": 0.8441558441558441,
+              "predicted_yes": 227,
+              "predicted_no": 235
+            },
+            "val_real": {
+              "ba_vs_original": 0.6836734693877551,
+              "ba_vs_donor": null,
+              "predicted_yes": 42,
+              "predicted_no": 56
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.3163265306122449,
+              "ba_vs_donor": 0.6836734693877551,
+              "predicted_yes": 42,
+              "predicted_no": 56
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.4610517621040344,
+              "yes_no_cosine": 0.9099934101104736
+            },
+            "projector": {
+              "feature_sd": 0.040689967572689056,
+              "yes_no_cosine": 0.9702138900756836
+            }
+          }
+        },
+        {
+          "epoch": 15,
+          "mean_loss": 0.6472871243377676,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8203463203463204,
+              "ba_vs_donor": null,
+              "predicted_yes": 218,
+              "predicted_no": 244
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 462,
+              "predicted_no": 0
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.17965367965367968,
+              "ba_vs_donor": 0.8203463203463204,
+              "predicted_yes": 218,
+              "predicted_no": 244
+            },
+            "val_real": {
+              "ba_vs_original": 0.6530612244897959,
+              "ba_vs_donor": null,
+              "predicted_yes": 39,
+              "predicted_no": 59
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 98,
+              "predicted_no": 0
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.3469387755102041,
+              "ba_vs_donor": 0.6530612244897959,
+              "predicted_yes": 39,
+              "predicted_no": 59
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.39470458030700684,
+              "yes_no_cosine": 0.9339355826377869
+            },
+            "projector": {
+              "feature_sd": 0.05178872495889664,
+              "yes_no_cosine": 0.9631048440933228
+            }
+          }
+        },
+        {
+          "epoch": 20,
+          "mean_loss": 0.5395449514297354,
+          "metrics": {
+            "train_real": {
+              "ba_vs_original": 0.8809523809523809,
+              "ba_vs_donor": null,
+              "predicted_yes": 244,
+              "predicted_no": 218
+            },
+            "train_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 462
+            },
+            "train_shuffle": {
+              "ba_vs_original": 0.11904761904761905,
+              "ba_vs_donor": 0.8809523809523809,
+              "predicted_yes": 244,
+              "predicted_no": 218
+            },
+            "val_real": {
+              "ba_vs_original": 0.7755102040816326,
+              "ba_vs_donor": null,
+              "predicted_yes": 49,
+              "predicted_no": 49
+            },
+            "val_zero": {
+              "ba_vs_original": 0.5,
+              "ba_vs_donor": null,
+              "predicted_yes": 0,
+              "predicted_no": 98
+            },
+            "val_shuffle": {
+              "ba_vs_original": 0.22448979591836735,
+              "ba_vs_donor": 0.7755102040816326,
+              "predicted_yes": 49,
+              "predicted_no": 49
+            }
+          },
+          "representation": {
+            "encoder": {
+              "feature_sd": 0.4405251443386078,
+              "yes_no_cosine": 0.8459338545799255
+            },
+            "projector": {
+              "feature_sd": 0.04097728803753853,
+              "yes_no_cosine": 0.9635524749755859
+            }
+          }
+        }
+      ],
+      "best_metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8809523809523809,
+          "ba_vs_donor": null,
+          "predicted_yes": 244,
+          "predicted_no": 218
+        },
+        "train_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 462
+        },
+        "train_shuffle": {
+          "ba_vs_original": 0.11904761904761905,
+          "ba_vs_donor": 0.8809523809523809,
+          "predicted_yes": 244,
+          "predicted_no": 218
+        },
+        "val_real": {
+          "ba_vs_original": 0.7755102040816326,
+          "ba_vs_donor": null,
+          "predicted_yes": 49,
+          "predicted_no": 49
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.22448979591836735,
+          "ba_vs_donor": 0.7755102040816326,
+          "predicted_yes": 49,
+          "predicted_no": 49
+        }
+      },
+      "best_representation": {
+        "encoder": {
+          "feature_sd": 0.4405251443386078,
+          "yes_no_cosine": 0.8459338545799255
+        },
+        "projector": {
+          "feature_sd": 0.04097728803753853,
+          "yes_no_cosine": 0.9635524749755859
+        }
+      },
+      "checkpoint": "C:\\tslm\\opentslm-cgm\\checkpoints\\cgm_stage_a3_tsqa_t56_s5proj_best.pt"
+    }
+  }
+}
