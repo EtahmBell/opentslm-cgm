@@ -1,0 +1,441 @@
+{
+  "experiment": "cgm_stage_b1_lora_language_readout",
+  "stage_a_source": "C:\\tslm\\opentslm-cgm\\checkpoints\\cgm_stage_a3_tsqa_t56_s5proj_best.pt",
+  "stage_a_validation_ba": 0.7755102040816326,
+  "training": {
+    "epochs": 8,
+    "batch_size": 4,
+    "lr_lora": 1e-05,
+    "sequence_weight": 1.0,
+    "pairwise_weight": 1.0,
+    "sensor_trainable": false,
+    "lora_trainable_parameters": 11272192,
+    "custom_answer_loss": true,
+    "answer_add_special_tokens": false
+  },
+  "initial_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.8138528138528138,
+      "ba_vs_donor": null,
+      "predicted_yes": 227,
+      "predicted_no": 235
+    },
+    "val_real": {
+      "ba_vs_original": 0.6734693877551021,
+      "ba_vs_donor": null,
+      "predicted_yes": 45,
+      "predicted_no": 53
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 98,
+      "predicted_no": 0
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.326530612244898,
+      "ba_vs_donor": 0.6734693877551021,
+      "predicted_yes": 45,
+      "predicted_no": 53
+    },
+    "val_generation_real": {
+      "ba": 0.4897959183673469,
+      "valid_fraction": 0.7142857142857143,
+      "sample_outputs": [
+        " a) The continuous",
+        " NoIn",
+        " NoIn",
+        " Yes. The continuous",
+        " YesIn",
+        " NoIn"
+      ]
+    }
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "mean_total_loss": null,
+      "mean_sequence_loss": null,
+      "mean_pairwise_loss": null,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8138528138528138,
+          "ba_vs_donor": null,
+          "predicted_yes": 227,
+          "predicted_no": 235
+        },
+        "val_real": {
+          "ba_vs_original": 0.6734693877551021,
+          "ba_vs_donor": null,
+          "predicted_yes": 45,
+          "predicted_no": 53
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.326530612244898,
+          "ba_vs_donor": 0.6734693877551021,
+          "predicted_yes": 45,
+          "predicted_no": 53
+        },
+        "val_generation_real": {
+          "ba": 0.4897959183673469,
+          "valid_fraction": 0.7142857142857143,
+          "sample_outputs": [
+            " a) The continuous",
+            " NoIn",
+            " NoIn",
+            " Yes. The continuous",
+            " YesIn",
+            " NoIn"
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 1,
+      "mean_total_loss": 0.7238667929331283,
+      "mean_sequence_loss": 0.20808739475263605,
+      "mean_pairwise_loss": 0.5157793964583874,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.8852813852813852,
+          "ba_vs_donor": null,
+          "predicted_yes": 250,
+          "predicted_no": 212
+        },
+        "val_real": {
+          "ba_vs_original": 0.7755102040816326,
+          "ba_vs_donor": null,
+          "predicted_yes": 51,
+          "predicted_no": 47
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.22448979591836735,
+          "ba_vs_donor": 0.7755102040816326,
+          "predicted_yes": 51,
+          "predicted_no": 47
+        },
+        "val_generation_real": {
+          "ba": 0.7755102040816326,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.\ufffd",
+            " No.",
+            " Yes.",
+            " Yes.",
+            " Yes.",
+            " No."
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "mean_total_loss": 0.6306641832787387,
+      "mean_sequence_loss": 0.15803774564445686,
+      "mean_pairwise_loss": 0.47262643949949473,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.9025974025974026,
+          "ba_vs_donor": null,
+          "predicted_yes": 224,
+          "predicted_no": 238
+        },
+        "val_real": {
+          "ba_vs_original": 0.7551020408163265,
+          "ba_vs_donor": null,
+          "predicted_yes": 37,
+          "predicted_no": 61
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.24489795918367346,
+          "ba_vs_donor": 0.7551020408163265,
+          "predicted_yes": 37,
+          "predicted_no": 61
+        },
+        "val_generation_real": {
+          "ba": 0.7551020408163265,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.\ufffd",
+            " No.",
+            " No.",
+            " Yes.",
+            " No.",
+            " No."
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "mean_total_loss": 0.556130052212995,
+      "mean_sequence_loss": 0.13933770418451127,
+      "mean_pairwise_loss": 0.41679234964073564,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.9134199134199135,
+          "ba_vs_donor": null,
+          "predicted_yes": 219,
+          "predicted_no": 243
+        },
+        "val_real": {
+          "ba_vs_original": 0.7244897959183674,
+          "ba_vs_donor": null,
+          "predicted_yes": 34,
+          "predicted_no": 64
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.2755102040816326,
+          "ba_vs_donor": 0.7244897959183674,
+          "predicted_yes": 34,
+          "predicted_no": 64
+        },
+        "val_generation_real": {
+          "ba": 0.7244897959183674,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.",
+            " No.",
+            " No.",
+            " No.",
+            " No.",
+            " No."
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "mean_total_loss": 0.605612074123828,
+      "mean_sequence_loss": 0.15158796556126367,
+      "mean_pairwise_loss": 0.45402411009600374,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.9090909090909092,
+          "ba_vs_donor": null,
+          "predicted_yes": 233,
+          "predicted_no": 229
+        },
+        "val_real": {
+          "ba_vs_original": 0.7755102040816326,
+          "ba_vs_donor": null,
+          "predicted_yes": 51,
+          "predicted_no": 47
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.22448979591836735,
+          "ba_vs_donor": 0.7755102040816326,
+          "predicted_yes": 51,
+          "predicted_no": 47
+        },
+        "val_generation_real": {
+          "ba": 0.7755102040816326,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.",
+            " No.",
+            " Yes.",
+            " Yes.",
+            " Yes.",
+            " No."
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 6,
+      "mean_total_loss": 0.45044189112992045,
+      "mean_sequence_loss": 0.11277493668296365,
+      "mean_pairwise_loss": 0.337666959674748,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.9329004329004329,
+          "ba_vs_donor": null,
+          "predicted_yes": 218,
+          "predicted_no": 244
+        },
+        "val_real": {
+          "ba_vs_original": 0.7448979591836735,
+          "ba_vs_donor": null,
+          "predicted_yes": 40,
+          "predicted_no": 58
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 0,
+          "predicted_no": 98
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.24489795918367346,
+          "ba_vs_donor": 0.7551020408163265,
+          "predicted_yes": 41,
+          "predicted_no": 57
+        },
+        "val_generation_real": {
+          "ba": 0.7448979591836735,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.",
+            " No.",
+            " Yes.",
+            " No.",
+            " No.",
+            " No."
+          ]
+        }
+      }
+    },
+    {
+      "epoch": 8,
+      "mean_total_loss": 0.4114207604797198,
+      "mean_sequence_loss": 0.10299280701933797,
+      "mean_pairwise_loss": 0.3084279510293084,
+      "metrics": {
+        "train_real": {
+          "ba_vs_original": 0.9329004329004329,
+          "ba_vs_donor": null,
+          "predicted_yes": 224,
+          "predicted_no": 238
+        },
+        "val_real": {
+          "ba_vs_original": 0.6836734693877551,
+          "ba_vs_donor": null,
+          "predicted_yes": 42,
+          "predicted_no": 56
+        },
+        "val_zero": {
+          "ba_vs_original": 0.5,
+          "ba_vs_donor": null,
+          "predicted_yes": 98,
+          "predicted_no": 0
+        },
+        "val_shuffle": {
+          "ba_vs_original": 0.3163265306122449,
+          "ba_vs_donor": 0.6836734693877551,
+          "predicted_yes": 42,
+          "predicted_no": 56
+        },
+        "val_generation_real": {
+          "ba": 0.6836734693877551,
+          "valid_fraction": 1.0,
+          "sample_outputs": [
+            " Yes.",
+            " No.",
+            " Yes.",
+            " Yes.",
+            " No.",
+            " No."
+          ]
+        }
+      }
+    }
+  ],
+  "best_epoch": 1,
+  "best_metrics": {
+    "train_real": {
+      "ba_vs_original": 0.8852813852813852,
+      "ba_vs_donor": null,
+      "predicted_yes": 250,
+      "predicted_no": 212
+    },
+    "train_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 462
+    },
+    "train_shuffle": {
+      "ba_vs_original": 0.11471861471861472,
+      "ba_vs_donor": 0.8852813852813852,
+      "predicted_yes": 250,
+      "predicted_no": 212
+    },
+    "val_real": {
+      "ba_vs_original": 0.7755102040816326,
+      "ba_vs_donor": null,
+      "predicted_yes": 51,
+      "predicted_no": 47
+    },
+    "val_zero": {
+      "ba_vs_original": 0.5,
+      "ba_vs_donor": null,
+      "predicted_yes": 0,
+      "predicted_no": 98
+    },
+    "val_shuffle": {
+      "ba_vs_original": 0.22448979591836735,
+      "ba_vs_donor": 0.7755102040816326,
+      "predicted_yes": 51,
+      "predicted_no": 47
+    },
+    "generation_real": {
+      "ba": 0.7755102040816326,
+      "valid_fraction": 1.0,
+      "sample_outputs": [
+        " Yes.\ufffd",
+        " No.",
+        " Yes.",
+        " Yes.",
+        " Yes.",
+        " No."
+      ]
+    },
+    "generation_zero": {
+      "ba": 0.5,
+      "valid_fraction": 1.0,
+      "sample_outputs": [
+        " No.",
+        " No.",
+        " No.",
+        " No.",
+        " No.",
+        " No."
+      ]
+    },
+    "generation_shuffle": {
+      "ba": 0.22448979591836735,
+      "valid_fraction": 1.0,
+      "sample_outputs": [
+        " No.",
+        " Yes.",
+        " No.",
+        " Yes.",
+        " No.",
+        " No."
+      ]
+    }
+  },
+  "stage_b_success": true,
+  "test_participants_sealed": 6
+}
